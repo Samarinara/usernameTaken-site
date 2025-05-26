@@ -108,30 +108,21 @@
     height: 10vh;
   }
 
-
-    a {
-      font-weight: 500;
-      color: #646cff;
-      text-decoration: inherit;
-    }
-    a:hover {
-      color: #535bf2;
-    }
-  
-
     #logo{
       font-size: clamp(20px, 4vh, 100px);
       line-height: 1.1;
       font-family: 'Courier New', Courier, monospace;
       z-index: 1;
       transition: 0.5s;
-      margin: 10%;
+      justify-content: center;
+      align-items: center;
     }
-    #logo:hover {
+
+    #logohover:hover {
       color: #ef3053;
       transition: 0.5s;
     }
-    #logo:hover span{
+    #logohover:hover span{
       color: #000000;
       transition: 0.5s;
     }
@@ -149,6 +140,9 @@
       color: #000000;
     }
 
+  h1{
+    margin-bottom: 10%;
+  }
 
   h2 {
     font-size: clamp(20px, 4vh, 50px);
@@ -157,18 +151,21 @@
   }
 
   button {
+    width: 20vh;
+    height: 10vh;
     border-radius: 8px;
-    border: 1px solid transparent;
+    border: 5px inset transparent;
     padding: 0.6em 1.2em;
-    font-size: 1em;
+    text-align: center;
+    font-size: .8em;
     font-weight: 500;
     font-family: inherit;
     background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
-  }
-  button:hover {
-    border-color: #646cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   button:focus,
   button:focus-visible {
@@ -176,7 +173,6 @@
   }
 
 
-  @media (prefers-color-scheme: dark) {
     a:hover {
       color: #ef3053;
     }
@@ -188,49 +184,28 @@
       background-color: #000000;
       color: #ef3053;
       border-color: #ef3053;
-      border-width: 2px;
+      border-width: 5px;
     }
-  }
+    
 
-  @media screen and (min-width: 600px) {
-    .column {
-      height: 100%;
-      width: 100%;
-      flex: 1; /* Allows columns to grow and shrink, taking up equal space */
-      margin: 10px; /* Example spacing between columns */
-      min-height: 100px; /* Example height */
-      border-radius: 20px;
-      background-color: #535bf2;
 
-    }
-
-    .columns-container {
-      display: flex; /* Makes the children (your .Column divs) arrange horizontally */
-      justify-content: space-around; /* Distributes space evenly around items */
-      /* Or use: justify-content: flex-start;  for items to start from the left */
-      /* Or use: justify-content: center; for items to be centered */
-      /* Add any other styling for your columns container here, like padding, margin, etc. */
-    }
-  }
-
-  @media screen and (max-width: 600px) {
     .column {
       width: 100%;
       height: 100%;
       flex: 1;
-      margin: 10px; /* Example spacing between columns */
       min-height: 100px; /* Example height */
       border-radius: 20px;
       background-color: #535bf2;
     }
 
     .columns-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5%;
       justify-content: space-around; /* Distributes space evenly around items */
-      /* Or use: justify-content: flex-start;  for items to start from the left */
-      /* Or use: justify-content: center; for items to be centered */
-      /* Add any other styling for your columns container here, like padding, margin, etc. */
     }
-  }
+  
 
   @keyframes pan {
     0% {

@@ -7,11 +7,14 @@ function App() {
       <div id='abs'>
         <div id='circle' className='main'>
           <div id='logo'>
-            <h1><span id='cursor'>_</span>username<span id='red'>Taken</span></h1>
+            <div id='logohover'>
+              <h1><span id='cursor'>_</span>username<span id='red'>Taken</span></h1>
+            </div>
+
             <div className='columns-container'>
-              <button>About</button>
-              <button>About</button>
-              <button>About</button>
+              <button>Securing</button>
+              <button>Creating</button>
+              <button>Learning</button>
 
             </div>
           </div>
