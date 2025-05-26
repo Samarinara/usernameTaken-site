@@ -1,0 +1,284 @@
+/* CSS HEX */
+/* --seashell: #eee2dfff;
+--champagne-pink: #eed7c5ff;
+--jade: #44af69ff;
+--vermilion: #f24333ff;
+--moonstone: #2b9eb3ff; */
+
+  #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+  }
+  :root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #bg {
+    width: 100vw;
+    height: 100%;
+    min-height: 100dvh;
+    background: radial-gradient(#ff3b5f, #EF3054);
+    z-index: -2;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #circles{
+    animation: pan 180s linear infinite;    
+    background-image: url("src/assets/squares.png");
+    animation: pan 120s linear infinite;
+    position: absolute;
+  }
+  .big{
+    width: 100vw;
+    height: 100vh;
+    opacity: 15%;
+
+  }
+  .small{
+    width: 1vh;
+    height: 1vh;
+    opacity: 5%;
+  }
+
+  #circut{
+    animation: pan 180s linear infinite;    
+    background-image: url("src/assets/circut.png");
+    animation: pan 120s linear infinite;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: 50%;
+  }
+  
+  #abs{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(rgba(242, 67, 51, 0), #EF3054);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2b9eb3ff;
+    width: 100vw;
+    height: 10%;
+    box-sizing: border-box; 
+    position: sticky;
+    top: 0;
+    border-radius: 20px;
+
+  }
+  #circle {
+    border-radius: 50%;
+    background-color: #35294c;
+  }
+  .main{
+    width: 80vh;
+    height: 80vh;
+    animation: vibe 5s infinite linear;
+    box-shadow:0vw 0vw 5vw #00000077;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .menu{
+    width: 10vh;
+    height: 10vh;
+  }
+
+
+    a {
+      font-weight: 500;
+      color: #646cff;
+      text-decoration: inherit;
+    }
+    a:hover {
+      color: #535bf2;
+    }
+  
+
+    #logo{
+      font-size: clamp(20px, 4vh, 100px);
+      line-height: 1.1;
+      font-family: 'Courier New', Courier, monospace;
+      z-index: 1;
+      transition: 0.5s;
+      margin: 10%;
+    }
+    #logo:hover {
+      color: #ef3053;
+      transition: 0.5s;
+    }
+    #logo:hover span{
+      color: #000000;
+      transition: 0.5s;
+    }
+
+    #cursor{
+      animation: blink 1s infinite;
+    }
+
+    #red{
+      color: #ef3053;
+      transition: 0.5s;
+
+    }
+    #red:hover{
+      color: #000000;
+    }
+
+
+  h2 {
+    font-size: clamp(20px, 4vh, 50px);
+    line-height: 1.1;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button:hover {
+    border-color: #646cff;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+
+  @media (prefers-color-scheme: dark) {
+    a:hover {
+      color: #ef3053;
+    }
+    button {
+      background-color: #ef3053;
+
+    }
+    button:hover{
+      background-color: #000000;
+      color: #ef3053;
+      border-color: #ef3053;
+      border-width: 2px;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .column {
+      height: 100%;
+      width: 100%;
+      flex: 1; /* Allows columns to grow and shrink, taking up equal space */
+      margin: 10px; /* Example spacing between columns */
+      min-height: 100px; /* Example height */
+      border-radius: 20px;
+      background-color: #535bf2;
+
+    }
+
+    .columns-container {
+      display: flex; /* Makes the children (your .Column divs) arrange horizontally */
+      justify-content: space-around; /* Distributes space evenly around items */
+      /* Or use: justify-content: flex-start;  for items to start from the left */
+      /* Or use: justify-content: center; for items to be centered */
+      /* Add any other styling for your columns container here, like padding, margin, etc. */
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      margin: 10px; /* Example spacing between columns */
+      min-height: 100px; /* Example height */
+      border-radius: 20px;
+      background-color: #535bf2;
+    }
+
+    .columns-container {
+      justify-content: space-around; /* Distributes space evenly around items */
+      /* Or use: justify-content: flex-start;  for items to start from the left */
+      /* Or use: justify-content: center; for items to be centered */
+      /* Add any other styling for your columns container here, like padding, margin, etc. */
+    }
+  }
+
+  @keyframes pan {
+    0% {
+      background-position-x: 0vw;
+      background-position-y: 0vw;
+    }
+    100% {
+      background-position-x: 100vw;
+      background-position-y: 100vw;
+    
+    }
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes vibe {
+    0% {
+      transform: position(0, 1);
+      transform: scale(1);
+
+    }
+    50% {
+      transform: position(0, 1.5);
+      transform: scale(1.01);
+    }
+    100% {
+      transform: position(0, 1);
+      transform: scale(1);
+    
+    }
+    
+  }
+
+  @keyframes blink{
+    0% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
