@@ -40,7 +40,7 @@
 
   #circles{
     animation: pan 180s linear infinite;    
-    background-image: url("src/assets/squares.png");
+    background-image: url("/assets/squares.png");
     animation: pan 120s linear infinite;
     position: absolute;
   }
@@ -58,7 +58,7 @@
 
   #circut{
     animation: pan 180s linear infinite;    
-    background-image: url("src/assets/circut.png");
+    background-image: url("/assets/circut.png");
     animation: pan 120s linear infinite;
     position: absolute;
     width: 100vw;
