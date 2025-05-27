@@ -12,8 +12,8 @@ function HomePage() {
             </div>
 
             <div className='columns-container'>
+              <button className='redbutton'>Creating</button>
               <button className='bluebutton'>Securing</button>
-              <button>Creating</button>
               <button className='greenbutton'>Learning</button>
 
             </div>
