@@ -186,8 +186,29 @@
       border-color: #ef3053;
       border-width: 5px;
     }
-    
+  
+    .bluebutton{
+      background-color: #90D5FF;
+      transition: 0.25s;
 
+    }
+    .bluebutton:hover{
+      background-color: #000000;
+      color: #90D5FF;
+      border-color: #90D5FF;
+      transition: 0.25s;
+    }
+
+    .greenbutton{
+      background-color: #66BB6A;
+      transition: 0.25s;
+    }
+    .greenbutton:hover{
+      background-color: #000000;
+      color: #66BB6A;
+      border-color: #66BB6A;
+      transition: 0.25s;
+    }
 
     .column {
       width: 100%;
@@ -234,7 +255,7 @@
 
     }
     50% {
-      transform: position(0, 1.5);
+      transform: position(0, 2);
       transform: scale(1.01);
     }
     100% {

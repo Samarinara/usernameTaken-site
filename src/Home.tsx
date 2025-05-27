@@ -12,9 +12,9 @@ function HomePage() {
             </div>
 
             <div className='columns-container'>
-              <button>Securing</button>
+              <button className='bluebutton'>Securing</button>
               <button>Creating</button>
-              <button>Learning</button>
+              <button className='greenbutton'>Learning</button>
 
             </div>
           </div>
