@@ -1,28 +1,24 @@
-import './App.css'
+import { Route, Link, BrowserRouter, Routes, Navigate } from 'react-router-dom';
+import "./App.css";
+
+import HomePage from "./Home";
 
 function App() {
-  return (
-    <div id='bg'>
-      <div id='circles' className='big'></div>
-      <div id='abs'>
-        <div id='circle' className='main'>
-          <div id='logo'>
-            <div id='logohover'>
-              <h1><span id='cursor'>_</span>username<span id='red'>Taken</span></h1>
-            </div>
-
-            <div className='columns-container'>
-              <button>Securing</button>
-              <button>Creating</button>
-              <button>Learning</button>
-
-            </div>
-          </div>
-          <div id='circut'></div>
-        </div>
-        </div>
+  return(
+    <div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/home" replace />} />
+      </Routes>
+      
+      <div className="footer">
+        <Link to="/home">Home</Link>
       </div>
-  )
+    </BrowserRouter>
+    </div>
+  );
 }
 
-export default App
+export default App;
