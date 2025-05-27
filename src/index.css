@@ -135,6 +135,8 @@
       text-shadow: -2px -2px 0 #66BB6A, 2px -2px 0 #66BB6A, -2px 2px 0 #66BB6A, 2px 2px 0 #66BB6A;
     }
     .redtext{
+      color: #ef3053;
+
     }
     #red{
       color: #ef3053;
@@ -191,6 +193,7 @@
       border-color: #ef3053;
       border-width: 5px;
     }
+
     .redbutton{
       background-color: #ef3053;
       transition: 0.25s;

@@ -1,6 +1,9 @@
 import './App.css'
+import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <div id='bg'>
       <div id='circles' className='big'></div>
@@ -12,9 +15,9 @@ function HomePage() {
             </div>
 
             <div className='columns-container'>
-              <button className='redbutton'>Creating</button>
-              <button className='bluebutton'>Securing</button>
-              <button className='greenbutton'>Learning</button>
+              <button className='redbutton' onClick={() => {navigate('/creating')}}>Creating</button>
+              <button className='bluebutton'onClick={() => {navigate('/securing')}}>Securing</button>
+              <button className='greenbutton'onClick={() => {navigate('/learning')}}>Learning</button>
 
             </div>
           </div>
@@ -24,5 +27,6 @@ function HomePage() {
       </div>
   )
 }
+
 
 export default HomePage;
