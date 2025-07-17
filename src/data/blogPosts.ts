@@ -1,7 +1,7 @@
 /**
  * Mock blog post data for _usernameTaken website
  */
-import { BlogPost } from '../models/BlogPost';
+import type { BlogPost } from '../models/BlogPost';
 
 /**
  * Mock blog posts data
@@ -75,7 +75,7 @@ Rust is being used in various systems programming domains:
 4. **Networking**: High-performance networking tools benefit from Rust's safety and speed
 
 As the ecosystem continues to mature, Rust is becoming an increasingly attractive option for systems programming projects where reliability and performance are paramount.`,
-    excerpt: 'Exploring how Rust's unique features make it an excellent choice for systems programming tasks.',
+    excerpt: 'Exploring how Rust\'s unique features make it an excellent choice for systems programming tasks.',
     author: 'maria-chen',
     publishDate: new Date('2025-05-28'),
     lastModified: new Date('2025-05-28'),
