@@ -1,7 +1,7 @@
 /**
  * Utility functions for blog post management and filtering
  */
-import { BlogPost } from '../models/BlogPost';
+import type { BlogPost } from '../models/BlogPost';
 
 /**
  * Sort blog posts by publish date (newest first)

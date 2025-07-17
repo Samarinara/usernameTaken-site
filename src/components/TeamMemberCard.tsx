@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { TeamMember, TeamMemberCardProps } from '../models/TeamMember';
+import type { TeamMemberCardProps } from '../models/TeamMember';
 import { getInitials } from '../utils/teamMemberUtils';
 import './TeamMemberCard.css';
 

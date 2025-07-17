@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BlogPostCardProps } from '../models/BlogPost';
+import type { BlogPostCardProps } from '../models/BlogPost';
 import { getTeamMemberById } from '../utils/teamMemberUtils';
 import './BlogPostCard.css';
 
