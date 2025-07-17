@@ -5,10 +5,14 @@ import HomePage from "./Home";
 import CreatingPage from './Creating';
 import SecuringPage from './Securing';
 import LearningPage from './Learning';
+import TeamPage from './pages/Team';
+import TeamMemberDetail from './pages/TeamMemberDetail';
+import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
   return(
-    <div>
+    <div className="app">
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
@@ -16,12 +20,12 @@ function App() {
         <Route path="/creating" element={<CreatingPage />} />
         <Route path="/securing" element={<SecuringPage />} />
         <Route path="/learning" element={<LearningPage />} />
+        <Route path="/team" element={<TeamPage />} />
+        <Route path="/team/:memberId" element={<TeamMemberDetail />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:projectId" element={<ProjectDetail />} />
         <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
-      
-      <div className="footer">
-        <Link to="/home">Home</Link>
-      </div>
     </BrowserRouter>
     </div>
   );

@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Footer Component - Neobrutalist Design
+   ========================================================================== */
+
+.footer {
+  background-color: var(--color-secondary);
+  border-top: var(--border-medium);
+  margin-top: auto;
+  padding: var(--space-12) 0 var(--space-8) 0;
+}
+
+.footer-container {
+  max-width: var(--breakpoint-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-8);
+}
+
+/* ==========================================================================
+   Footer Brand Section
+   ========================================================================== */
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  font-family: var(--font-family-mono);
+  margin: 0;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+.footer-description {
+  font-size: var(--text-base);
+  font-family: var(--font-family-mono);
+  color: var(--color-gray-600);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Footer Links Section
+   ========================================================================== */
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-8);
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.footer-section-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  font-family: var(--font-family-mono);
+  margin: 0;
+  color: var(--color-primary);
+  border-bottom: var(--border-thin);
+  padding-bottom: var(--space-2);
+}
+
+.footer-link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer-link-item {
+  margin: 0;
+}
+
+.footer-link {
+  display: inline-block;
+  font-family: var(--font-family-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--font-normal);
+  color: var(--color-gray-600);
+  text-decoration: none;
+  padding: var(--space-1) 0;
+  border-bottom: 1px solid transparent;
+  transition: none;
+}
+
+.footer-link:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer-link:focus {
+  outline: var(--border-medium);
+  outline-offset: 2px;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Footer Bottom Section
+   ========================================================================== */
+
+.footer-bottom {
+  border-top: var(--border-thin);
+  padding-top: var(--space-6);
+}
+
+.footer-copyright {
+  text-align: center;
+}
+
+.footer-copyright p {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--space-8) 0 var(--space-6) 0;
+  }
+
+  .footer-container {
+    padding: 0 var(--space-3);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-bottom: var(--space-6);
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .footer-title {
+    font-size: var(--text-xl);
+  }
+
+  .footer-section-title {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 var(--space-2);
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .footer-title {
+    font-size: var(--text-lg);
+  }
+
+  .footer-description {
+    font-size: var(--text-sm);
+  }
+}
+
+/* ==========================================================================
+   High Contrast and Accessibility
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-link {
+    transition: none;
+  }
+}
+
+/* Focus indicators for keyboard navigation */
+.footer-link:focus-visible {
+  outline: var(--border-thick);
+  outline-offset: 2px;
+}

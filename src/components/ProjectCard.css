@@ -1,0 +1,307 @@
+/* ProjectCard component with neobrutalist styling */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-medium);
+  background-color: var(--color-secondary);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  height: 100%;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.project-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-md);
+}
+
+.project-card.grid {
+  min-height: 340px;
+}
+
+.project-card.list {
+  flex-direction: row;
+  min-height: 180px;
+}
+
+.project-card.list .project-card-content {
+  flex: 1;
+}
+
+/* Header styling with sharp rectangular design */
+.project-card-header {
+  padding: var(--space-4);
+  border-bottom: var(--border-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.project-card-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.02em;
+}
+
+.project-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-card-duration {
+  font-size: var(--text-xs);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.01em;
+  border: var(--border-thin);
+  padding: var(--space-1) var(--space-2);
+  background-color: var(--color-gray-100);
+}
+
+/* Status badges with distinct styling */
+.project-card-status {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-thin);
+  font-weight: var(--font-medium);
+  letter-spacing: 0.05em;
+  font-family: 'JetBrains Mono', monospace;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.status-icon {
+  font-weight: var(--font-bold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-status.status-completed {
+  background-color: var(--color-gray-200);
+  border: var(--border-medium);
+}
+
+.project-card-status.status-in-progress {
+  background-color: var(--color-secondary);
+  border-style: solid;
+  border-width: 2px;
+}
+
+.project-card-status.status-archived {
+  text-decoration: line-through;
+  color: var(--color-gray-500);
+}
+
+.project-card-status.status-planning {
+  border-style: dashed;
+  border-width: 2px;
+}
+
+/* Content area with clean typography */
+.project-card-content {
+  padding: var(--space-4);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-description {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.01em;
+}
+
+.project-card-category-container {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Category indicators with distinctive styling */
+.project-card-category {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-thin);
+  font-weight: var(--font-medium);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.project-card-category.category-computer-science {
+  border-width: 2px;
+  border-style: solid;
+  background-color: var(--color-gray-100);
+}
+
+.project-card-category.category-cybersecurity {
+  border-style: double;
+  border-width: 3px;
+  background-color: var(--color-gray-100);
+}
+
+.project-card-category.category-web-development {
+  border-style: solid;
+  border-width: 1px;
+  background-color: var(--color-gray-100);
+}
+
+.project-card-category.category-research {
+  border-style: dashed;
+  border-width: 2px;
+  background-color: var(--color-gray-100);
+}
+
+.project-card-category.category-other {
+  border-style: dotted;
+  border-width: 2px;
+  background-color: var(--color-gray-100);
+}
+
+/* Footer with technology tags */
+.project-card-footer {
+  padding: var(--space-4);
+  border-top: var(--border-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.project-card-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Technology badges with sharp rectangular design */
+.project-card-technology {
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-thin);
+  background-color: var(--color-gray-100);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.01em;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.project-card-technology-more {
+  background-color: var(--color-gray-200);
+}
+
+/* Inverted state on hover for interactive elements */
+.project-card-technology:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  cursor: default;
+}
+
+/* Achievement badge styling */
+.project-card-achievements {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-2);
+}
+
+.project-card-achievement-badge {
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-medium);
+  background-color: var(--color-gray-100);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: var(--font-bold);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Link styling */
+.project-card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.project-card-link-indicator {
+  position: absolute;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  width: var(--space-6);
+  height: var(--space-6);
+  border: var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.project-card-link-indicator::after {
+  content: "→";
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: var(--font-bold);
+}
+
+.project-card:hover .project-card-link-indicator {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+/* List variant specific styles */
+.project-card.list .project-card-header {
+  width: 30%;
+  border-bottom: none;
+  border-right: var(--border-medium);
+}
+
+.project-card.list .project-card-content {
+  width: 40%;
+  border-right: var(--border-medium);
+}
+
+.project-card.list .project-card-footer {
+  width: 30%;
+  border-top: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-card.list {
+    flex-direction: column;
+  }
+  
+  .project-card.list .project-card-header,
+  .project-card.list .project-card-content,
+  .project-card.list .project-card-footer {
+    width: 100%;
+    border-right: none;
+  }
+  
+  .project-card.list .project-card-header {
+    border-bottom: var(--border-medium);
+  }
+  
+  .project-card.list .project-card-footer {
+    border-top: var(--border-medium);
+  }
+  
+  .project-card-header {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .project-card-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+}

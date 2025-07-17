@@ -1,0 +1,217 @@
+/* ==========================================================================
+   Header Component - Neobrutalist Design
+   ========================================================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-secondary);
+  border-bottom: var(--border-medium);
+  padding: var(--space-4) 0;
+}
+
+.header-container {
+  max-width: var(--breakpoint-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+/* ==========================================================================
+   Brand Section
+   ========================================================================== */
+
+.header-brand {
+  flex-shrink: 0;
+}
+
+.brand-link {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.brand-link:hover {
+  text-decoration: none;
+}
+
+.brand-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin: 0;
+  font-family: var(--font-family-mono);
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.header-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-2);
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-family-mono);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-primary);
+  text-decoration: none;
+  border: var(--border-thin);
+  background-color: var(--color-secondary);
+  transition: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link:hover {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.nav-link:focus {
+  outline: var(--border-medium);
+  outline-offset: 2px;
+}
+
+.nav-link--active {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Mobile Menu Button
+   ========================================================================== */
+
+.mobile-menu-button {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  padding: var(--space-2);
+  background-color: var(--color-secondary);
+  border: var(--border-medium);
+  cursor: pointer;
+  gap: var(--space-1);
+}
+
+.mobile-menu-button:hover {
+  background-color: var(--color-primary);
+}
+
+.mobile-menu-button:hover .menu-icon {
+  background-color: var(--color-secondary);
+}
+
+.menu-icon {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: none;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 var(--space-3);
+    gap: var(--space-4);
+  }
+
+  .brand-title {
+    font-size: var(--text-xl);
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  /* Mobile navigation - hidden by default, can be toggled with JavaScript */
+  .header-nav--mobile {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-secondary);
+    border-bottom: var(--border-medium);
+    padding: var(--space-4);
+  }
+
+  .header-nav--mobile .nav-list {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .header-nav--mobile .nav-link {
+    width: 100%;
+    text-align: center;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 var(--space-2);
+  }
+
+  .brand-title {
+    font-size: var(--text-lg);
+  }
+
+  .nav-link {
+    padding: var(--space-4) var(--space-3);
+    font-size: var(--text-sm);
+  }
+}
+
+/* ==========================================================================
+   High Contrast and Accessibility
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .mobile-menu-button,
+  .menu-icon {
+    transition: none;
+  }
+}
+
+/* Focus indicators for keyboard navigation */
+.nav-link:focus-visible,
+.mobile-menu-button:focus-visible,
+.brand-link:focus-visible {
+  outline: var(--border-thick);
+  outline-offset: 2px;
+}

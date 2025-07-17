@@ -1,298 +1,208 @@
-/* CSS HEX */
-/* --seashell: #eee2dfff;
---champagne-pink: #eed7c5ff;
---jade: #44af69ff;
---vermilion: #f24333ff;
---moonstone: #2b9eb3ff; */
+/* ==========================================================================
+   Neobrutalist Design System - E-ink Inspired
+   ========================================================================== */
 
-  #root {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
-  }
+:root {
+  /* Primary Colors - Monochrome E-ink Inspired */
+  --color-primary: #000000;      /* Pure black */
+  --color-secondary: #ffffff;    /* Pure white */
+  
+  /* Grayscale */
+  --color-gray-100: #f5f5f5;     /* Very light gray */
+  --color-gray-200: #e5e5e5;     /* Light gray */
+  --color-gray-300: #d4d4d4;     /* Medium light gray */
+  --color-gray-400: #a3a3a3;     /* Medium gray */
+  --color-gray-500: #737373;     /* Dark medium gray */
+  --color-gray-600: #525252;     /* Dark gray */
+  --color-gray-700: #404040;     /* Very dark gray */
+  
+  /* Accent (minimal use) */
+  --color-accent: #1a1a1a;       /* Near black for subtle emphasis */
+
+  /* Typography */
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  
+  /* Font Sizes */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;     /* 4px */
+  --space-2: 0.5rem;      /* 8px */
+  --space-3: 0.75rem;     /* 12px */
+  --space-4: 1rem;        /* 16px */
+  --space-5: 1.25rem;     /* 20px */
+  --space-6: 1.5rem;      /* 24px */
+  --space-8: 2rem;        /* 32px */
+  --space-10: 2.5rem;     /* 40px */
+  --space-12: 3rem;       /* 48px */
+  --space-16: 4rem;       /* 64px */
+  --space-20: 5rem;       /* 80px */
+
+  /* Borders */
+  --border-thin: 1px solid var(--color-primary);
+  --border-medium: 2px solid var(--color-primary);
+  --border-thick: 3px solid var(--color-primary);
+
+  /* Shadows (minimal, for depth only) */
+  --shadow-sm: 2px 2px 0px var(--color-primary);
+  --shadow-md: 4px 4px 0px var(--color-primary);
+  --shadow-lg: 6px 6px 0px var(--color-primary);
+
+  /* Responsive Breakpoints */
+  --breakpoint-sm: 640px;   /* Small devices */
+  --breakpoint-md: 768px;   /* Medium devices */
+  --breakpoint-lg: 1024px;  /* Large devices */
+  --breakpoint-xl: 1280px;  /* Extra large devices */
+
+  /* Typography rendering */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   Reset and Base Styles
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-family-mono);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-bold);
+  line-height: 1.2;
+  margin: 0 0 var(--space-4) 0;
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+}
+
+h5 {
+  font-size: var(--text-xl);
+}
+
+h6 {
+  font-size: var(--text-lg);
+}
+
+p {
+  margin: 0 0 var(--space-4) 0;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Interactive Elements
+   ========================================================================== */
+
+button {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  border: var(--border-medium);
+  padding: var(--space-3) var(--space-6);
+  cursor: pointer;
+  transition: none;
+  min-height: 44px; /* Touch-friendly */
+}
+
+button:hover {
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+}
+
+button:focus,
+button:focus-visible {
+  outline: var(--border-thick);
+  outline-offset: 2px;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus {
+  outline: var(--border-medium);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
   :root {
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-  }
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-  }
-  #bg {
-    width: 100vw;
-    height: 100%;
-    min-height: 100dvh;
-    background: radial-gradient(#007795, #009dc4);
-    z-index: -2;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #circles{
-    animation: pan 180s linear infinite;    
-    background-image: url("/assets/squares.webp");
-    animation: pan 240s linear infinite;
-    position: absolute;
-  }
-  .big{
-    width: 100vw;
-    height: 100vh;
-    opacity: 15%;
-
-  }
-  .small{
-    width: 1vh;
-    height: 1vh;
-    opacity: 5%;
-  }
-
-  #circut{
-    animation: pan 180s linear infinite;    
-    background-image: url("/assets/circut.webp");
-    animation: pan 240s linear infinite;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    opacity: 50%;
+    --text-5xl: 2.25rem;   /* Smaller on mobile */
+    --text-4xl: 1.875rem;
+    --text-3xl: 1.5rem;
   }
   
-  #abs{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(rgba(242, 67, 51, 0), #009dc4);
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #2b9eb3ff;
-    width: 100vw;
-    height: 10%;
-    box-sizing: border-box; 
-    position: sticky;
-    top: 0;
-    border-radius: 20px;
-
-  }
-  #circle {
-    border-radius: 50%;
-    background-color: #009dc4;
-  }
-  .main{
-    width: 80vh;
-    height: 80vh;
-    animation: vibe 5s infinite linear;
-    box-shadow:0vw 0vw 2.5vw #ffffff95;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
-  .menu{
-    width: 10vh;
-    height: 10vh;
-  }
-
-    #logo{
-      font-size: clamp(20px, 4vh, 100px);
-      line-height: 1.1;
-      font-family: 'Courier New', Courier, monospace;
-      z-index: 1;
-      transition: 0.5s;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #logohover:hover {
-      color: #ef3053;
-      transition: 0.5s;
-    }
-    #logohover:hover span{
-      color: #000000;
-      transition: 0.5s;
-    }
-
-    #cursor{
-      animation: blink 1s infinite;
-    }
-    .greentext{
-      color: #3d6e3f;
-      text-shadow: -2px -2px 0 #66BB6A, 2px -2px 0 #66BB6A, -2px 2px 0 #66BB6A, 2px 2px 0 #66BB6A;
-    }
-    .redtext{
-      color: #ef3053;
-
-    }
-    #red{
-      color: #ef3053;
-      transition: 0.5s;
-
-    }
-    #red:hover{
-      color: #000000;
-    }
-
-  h1{
-    margin-bottom: 10%;
-  }
-
-  h2 {
-    font-size: clamp(20px, 4vh, 50px);
-    line-height: 1.1;
-    font-family: 'Courier New', Courier, monospace;
-  }
-
   button {
-    width: 20vh;
-    height: 10vh;
-    border-radius: 8px;
-    border: 5px inset transparent;
-    padding: 0.6em 1.2em;
-    text-align: center;
-    font-size: .8em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height: 48px; /* Larger touch target on mobile */
+    padding: var(--space-4) var(--space-6);
   }
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-
-
-    a:hover {
-      color: #ef3053;
-    }
-    button {
-      background-color: #ef3053;
-
-    }
-    button:hover{
-      background-color: #000000;
-      color: #ef3053;
-      border-color: #ef3053;
-      border-width: 5px;
-    }
-
-    .redbutton{
-      background-color: #ef3053;
-      transition: 0.25s;
-    }
-    .redbutton:hover{
-      background-color: #000000;
-      color: #ef3053;
-      border-color: #ef3053;
-      transition: 0.25s;
-    }
-
-    .bluebutton{
-      background-color: #90D5FF;
-      transition: 0.25s;
-
-    }
-    .bluebutton:hover{
-      background-color: #000000;
-      color: #90D5FF;
-      border-color: #90D5FF;
-      transition: 0.25s;
-    }
-
-    .greenbutton{
-      background-color: #66BB6A;
-      transition: 0.25s;
-    }
-    .greenbutton:hover{
-      background-color: #000000;
-      color: #66BB6A;
-      border-color: #66BB6A;
-      transition: 0.25s;
-    }
-
-    .column {
-      width: 100%;
-      height: 100%;
-      flex: 1;
-      min-height: 100px; /* Example height */
-      border-radius: 20px;
-      background-color: #535bf2;
-    }
-
-    .columns-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 5%;
-      justify-content: space-around; /* Distributes space evenly around items */
-    }
-  
-
-  @keyframes pan {
-    0% {
-      background-position-x: 0vw;
-      background-position-y: 0vw;
-    }
-    100% {
-      background-position-x: 200vw;
-      background-position-y: 200vw;
-    
-    }
-  }
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes vibe {
-    0% {
-      transform: position(0, 1);
-      transform: scale(1);
-
-    }
-    50% {
-      transform: position(0, 2);
-      transform: scale(1.01);
-    }
-    100% {
-      transform: position(0, 1);
-      transform: scale(1);
-    
-    }
-    
-  }
-
-  @keyframes blink{
-    0% {
-      opacity: 1;
-    }
-    30% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+}
 
