@@ -2,6 +2,16 @@
  * Utility functions for blog post management and filtering
  */
 import type { BlogPost } from '../models/BlogPost';
+import { blogPosts } from '../data/blogPosts';
+
+/**
+ * Get a blog post by its ID
+ * @param id Blog post ID
+ * @returns Blog post or undefined if not found
+ */
+export const getBlogPostById = (id: string): BlogPost | undefined => {
+  return blogPosts.find(post => post.id === id);
+};
 
 /**
  * Sort blog posts by publish date (newest first)

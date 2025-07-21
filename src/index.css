@@ -62,11 +62,17 @@
   --shadow-md: 4px 4px 0px var(--color-primary);
   --shadow-lg: 6px 6px 0px var(--color-primary);
 
-  /* Responsive Breakpoints */
-  --breakpoint-sm: 640px;   /* Small devices */
-  --breakpoint-md: 768px;   /* Medium devices */
-  --breakpoint-lg: 1024px;  /* Large devices */
-  --breakpoint-xl: 1280px;  /* Extra large devices */
+  /* Responsive Breakpoints - Mobile First */
+  --breakpoint-sm: 640px;   /* Small devices (landscape phones) */
+  --breakpoint-md: 768px;   /* Medium devices (tablets) */
+  --breakpoint-lg: 1024px;  /* Large devices (desktops) */
+  --breakpoint-xl: 1280px;  /* Extra large devices (large desktops) */
+  --breakpoint-2xl: 1536px; /* 2X large devices (very large screens) */
+
+  /* Touch-friendly sizing */
+  --touch-target-min: 44px;  /* Minimum touch target size */
+  --touch-target-comfortable: 48px; /* Comfortable touch target size */
+  --touch-spacing: 8px;      /* Minimum spacing between touch targets */
 
   /* Typography rendering */
   font-synthesis: none;
@@ -147,7 +153,7 @@ p {
 }
 
 /* ==========================================================================
-   Interactive Elements
+   Interactive Elements - Mobile First
    ========================================================================== */
 
 button {
@@ -157,10 +163,15 @@ button {
   color: var(--color-secondary);
   background-color: var(--color-primary);
   border: var(--border-medium);
-  padding: var(--space-3) var(--space-6);
+  padding: var(--space-4) var(--space-6);
   cursor: pointer;
   transition: none;
-  min-height: 44px; /* Touch-friendly */
+  min-height: var(--touch-target-comfortable); /* Touch-friendly by default */
+  min-width: var(--touch-target-comfortable);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 button:hover {
@@ -174,10 +185,19 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+button:active {
+  transform: translate(1px, 1px);
+}
+
+/* Touch-friendly links */
 a {
   color: var(--color-primary);
   text-decoration: underline;
   text-decoration-thickness: 1px;
+  min-height: var(--touch-target-min);
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) 0;
 }
 
 a:hover {
@@ -189,20 +209,94 @@ a:focus {
   outline-offset: 2px;
 }
 
+/* Touch target spacing */
+button + button,
+a + a,
+button + a,
+a + button {
+  margin-left: var(--touch-spacing);
+}
+
 /* ==========================================================================
-   Responsive Design
+   Responsive Design - Mobile First Approach
    ========================================================================== */
 
-@media (max-width: 768px) {
+/* Base styles are mobile-first, then we enhance for larger screens */
+
+/* Small devices (landscape phones, 640px and up) */
+@media (min-width: 640px) {
+  .container {
+    padding: var(--space-6);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
   :root {
-    --text-5xl: 2.25rem;   /* Smaller on mobile */
-    --text-4xl: 1.875rem;
-    --text-3xl: 1.5rem;
+    --text-5xl: 3rem;      /* Restore larger text on tablets+ */
+    --text-4xl: 2.25rem;
+    --text-3xl: 1.875rem;
   }
   
   button {
-    min-height: 48px; /* Larger touch target on mobile */
+    min-height: var(--touch-target-min); /* Smaller touch targets on non-mobile */
+    padding: var(--space-3) var(--space-6);
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .container {
+    padding: var(--space-8);
+  }
+}
+
+/* Extra large devices (large desktops, 1280px and up) */
+@media (min-width: 1280px) {
+  .container {
+    padding: var(--space-10);
+  }
+}
+
+/* Mobile-specific overrides (small screens) */
+@media (max-width: 767px) {
+  :root {
+    --text-5xl: 2.25rem;   /* Smaller text on mobile */
+    --text-4xl: 1.875rem;
+    --text-3xl: 1.5rem;
+    --text-2xl: 1.25rem;
+    --text-xl: 1.125rem;
+  }
+  
+  /* Ensure comfortable touch targets on mobile */
+  button {
+    min-height: var(--touch-target-comfortable);
     padding: var(--space-4) var(--space-6);
+  }
+  
+  /* Increase spacing between interactive elements on mobile */
+  button + button,
+  a + a,
+  button + a,
+  a + button {
+    margin-left: var(--space-3);
+  }
+}
+
+/* Very small devices (portrait phones, 480px and down) */
+@media (max-width: 480px) {
+  :root {
+    --text-5xl: 1.875rem;  /* Even smaller text on very small screens */
+    --text-4xl: 1.5rem;
+    --text-3xl: 1.25rem;
+    --space-4: 0.75rem;    /* Tighter spacing on very small screens */
+    --space-6: 1rem;
+    --space-8: 1.5rem;
+  }
+  
+  button {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
   }
 }
 

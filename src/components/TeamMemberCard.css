@@ -17,14 +17,14 @@
 }
 
 /* ==========================================================================
-   Grid Variant
+   Grid Variant - Mobile First
    ========================================================================== */
 
 .team-member-card--grid {
   display: flex;
   flex-direction: column;
-  padding: var(--space-6);
-  min-height: 280px;
+  padding: var(--space-4);
+  min-height: 240px;
 }
 
 .team-member-card--grid .team-member-card__avatar {
@@ -39,17 +39,20 @@
 }
 
 /* ==========================================================================
-   List Variant
+   List Variant - Mobile First
    ========================================================================== */
 
 .team-member-card--list {
   display: flex;
+  flex-direction: column;
   padding: var(--space-4);
-  min-height: 120px;
+  min-height: 140px;
 }
 
 .team-member-card--list .team-member-card__avatar {
-  margin-right: var(--space-4);
+  margin-right: 0;
+  margin-bottom: var(--space-3);
+  align-self: center;
   flex-shrink: 0;
 }
 
@@ -61,12 +64,12 @@
 }
 
 /* ==========================================================================
-   Avatar Styling
+   Avatar Styling - Mobile First
    ========================================================================== */
 
 .team-member-card__avatar {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border: var(--border-thin);
   background-color: var(--color-secondary);
   overflow: hidden;
@@ -102,12 +105,12 @@
 }
 
 /* ==========================================================================
-   Content Styling
+   Content Styling - Mobile First
    ========================================================================== */
 
 .team-member-card__name {
   font-family: var(--font-family-mono);
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   font-weight: var(--font-bold);
   margin: 0 0 var(--space-1) 0;
   letter-spacing: -0.02em;
@@ -115,7 +118,7 @@
 
 .team-member-card__role {
   font-family: var(--font-family-mono);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   font-weight: var(--font-normal);
   margin: 0 0 var(--space-3) 0;
   color: var(--color-gray-600);
@@ -205,57 +208,75 @@
 }
 
 /* ==========================================================================
-   Responsive Design
+   Responsive Design - Mobile First
    ========================================================================== */
 
-@media (max-width: 768px) {
+/* Mobile-first touch-friendly enhancements */
+.team-member-card__skill {
+  min-height: var(--touch-target-min);
+  display: inline-flex;
+  align-items: center;
+}
+
+.team-member-card__link {
+  min-height: var(--touch-target-comfortable);
+}
+
+/* Small devices (landscape phones, 640px and up) */
+@media (min-width: 640px) {
+  .team-member-card--list {
+    flex-direction: row;
+    min-height: 120px;
+  }
+  
+  .team-member-card--list .team-member-card__avatar {
+    margin-right: var(--space-4);
+    margin-bottom: 0;
+    align-self: flex-start;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
   .team-member-card--grid {
-    padding: var(--space-4);
-    min-height: 240px;
+    padding: var(--space-5);
+    min-height: 260px;
   }
   
   .team-member-card--list {
-    padding: var(--space-3);
+    padding: var(--space-4);
     min-height: 100px;
   }
   
   .team-member-card__avatar {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
   }
   
   .team-member-card__name {
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
   }
   
   .team-member-card__role {
-    font-size: var(--text-sm);
-  }
-}
-
-@media (max-width: 480px) {
-  .team-member-card--list {
-    flex-direction: column;
-    padding: var(--space-4);
-  }
-  
-  .team-member-card--list .team-member-card__avatar {
-    margin-right: 0;
-    margin-bottom: var(--space-3);
-    align-self: center;
-  }
-  
-  .team-member-card__name {
     font-size: var(--text-base);
   }
   
-  .team-member-card__role {
-    font-size: var(--text-xs);
+  .team-member-card__link {
+    min-height: var(--touch-target-min);
+    padding: var(--space-2) var(--space-4);
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .team-member-card--grid {
+    padding: var(--space-6);
+    min-height: 280px;
   }
   
-  .team-member-card__skill {
-    font-size: var(--text-xs);
-    padding: var(--space-1);
+  .team-member-card__avatar {
+    width: 80px;
+    height: 80px;
   }
 }
 

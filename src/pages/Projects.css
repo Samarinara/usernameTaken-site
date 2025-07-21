@@ -77,11 +77,11 @@
   background-color: var(--color-gray-100);
 }
 
-/* Projects grid */
+/* Projects grid - Mobile First */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--space-6);
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
 }
 
 .project-card-wrapper {
@@ -119,21 +119,47 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .projects-filters {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
+/* Responsive Design - Mobile First */
+
+/* Small devices (landscape phones, 640px and up) */
+@media (min-width: 640px) {
   .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-5);
   }
 }
 
-@media (max-width: 480px) {
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .projects-filters {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-6);
+  }
+  
+  .category-filters {
+    flex-wrap: wrap;
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+/* Mobile-specific overrides */
+@media (max-width: 639px) {
+  .projects-filters {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
   }
   
   .category-filters {
@@ -141,5 +167,12 @@
     overflow-x: auto;
     padding-bottom: var(--space-2);
     flex-wrap: nowrap;
+    gap: var(--space-3);
+  }
+  
+  .category-filter {
+    flex-shrink: 0;
+    min-height: var(--touch-target-comfortable);
+    padding: var(--space-3) var(--space-4);
   }
 }

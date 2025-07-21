@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './header.css';
 
@@ -16,12 +17,21 @@ const navigationItems: NavigationItem[] = [
 
 function Header() {
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className="header">
       <div className="header-container">
         <div className="header-brand">
-          <Link to="/" className="brand-link">
+          <Link to="/" className="brand-link" onClick={closeMobileMenu}>
             <h1 className="brand-title">_usernameTaken</h1>
           </Link>
         </div>
@@ -41,12 +51,36 @@ function Header() {
           </ul>
         </nav>
 
-        {/* Mobile menu button - will be styled for mobile */}
-        <button className="mobile-menu-button" aria-label="Toggle navigation">
+        {/* Mobile menu button */}
+        <button 
+          className="mobile-menu-button" 
+          aria-label="Toggle navigation"
+          aria-expanded={isMobileMenuOpen}
+          onClick={toggleMobileMenu}
+        >
           <span className="menu-icon"></span>
           <span className="menu-icon"></span>
           <span className="menu-icon"></span>
         </button>
+
+        {/* Mobile navigation menu */}
+        {isMobileMenuOpen && (
+          <nav className="header-nav--mobile">
+            <ul className="nav-list">
+              {navigationItems.map((item) => (
+                <li key={item.path} className="nav-item">
+                  <Link 
+                    to={item.path} 
+                    className={`nav-link ${location.pathname === item.path ? 'nav-link--active' : ''}`}
+                    onClick={closeMobileMenu}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
       </div>
     </header>
   );
