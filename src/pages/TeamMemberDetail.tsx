@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { getTeamMemberById, getInitials, getTeamMembersBySkill } from '../utils/teamMemberUtils';
 import Layout from '../components/Layout';
 import TeamMemberCard from '../components/TeamMemberCard';
-import './TeamMemberDetail.css';
+import './pages.css';
 
 /**
  * TeamMemberDetail page component

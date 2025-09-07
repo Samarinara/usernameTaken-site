@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import './Certifications.css';
+import './pages.css';
 
 // Mock certification data - this would normally come from a data file
 const certifications = [

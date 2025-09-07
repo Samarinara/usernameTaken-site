@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Layout from '../components/Layout';
 import TeamMemberCard from '../components/TeamMemberCard';
 import { getAllTeamMembers } from '../utils/teamMemberUtils';
-import './Team.css';
+import './pages.css';
 
 /**
  * Team page component

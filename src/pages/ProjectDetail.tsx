@@ -5,7 +5,7 @@ import { projects } from '../data/projects';
 import { getRelatedProjects } from '../utils/projectUtils';
 import type { Project } from '../models/Project';
 import ProjectCard from '../components/ProjectCard';
-import './ProjectDetail.css';
+import './pages.css';
 
 /**
  * ProjectDetail component displays detailed information about a specific project

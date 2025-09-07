@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import BlogPostCard from '../components/BlogPostCard';
 import { blogPosts } from '../data/blogPosts';
-import './Blog.css';
+import './pages.css';
 
 const Blog: React.FC = () => {
   return (

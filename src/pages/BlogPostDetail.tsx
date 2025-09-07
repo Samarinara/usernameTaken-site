@@ -3,7 +3,7 @@ import { useParams, Navigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { blogPosts } from '../data/blogPosts';
 import { getBlogPostById } from '../utils/blogPostUtils';
-import './BlogPostDetail.css';
+import './pages.css';
 
 const BlogPostDetail: React.FC = () => {
   const { postId } = useParams<{ postId: string }>();

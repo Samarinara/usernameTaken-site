@@ -8,7 +8,7 @@ import {
   sortProjectsByStartDate
 } from '../utils/projectUtils';
 import type { Project, ProjectCategory } from '../models/Project';
-import './Projects.css';
+import './pages.css';
 
 /**
  * Projects page component displaying all projects with filtering functionality

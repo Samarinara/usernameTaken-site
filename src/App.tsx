@@ -9,6 +9,9 @@ import ProjectDetail from './pages/ProjectDetail';
 import Blog from './pages/Blog';
 import BlogPostDetail from './pages/BlogPostDetail';
 import Certifications from './pages/Certifications';
+import UnderConstruction from './pages/UnderConstruction';
+
+
 
 function App() {
   return(
@@ -17,14 +20,18 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<Navigate to="/" replace />} />
-        <Route path="/team" element={<TeamPage />} />
+
+        //Under Construction Pages
+{/*         <Route path="/team" element={<TeamPage />} />
         <Route path="/team/:memberId" element={<TeamMemberDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:projectId" element={<ProjectDetail />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:postId" element={<BlogPostDetail />} />
-        <Route path="/certifications" element={<Certifications />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="/certifications" element={<Certifications />} /> */}
+        <Route path="/under-construction" element={<UnderConstruction/>} />
+        
+        <Route path="*" element={<Navigate to="/under-construction" replace />} />
       </Routes>
     </BrowserRouter>
     </div>
