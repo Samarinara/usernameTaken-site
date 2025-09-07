@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import Layout from '../components/Layout';
-import { blogPosts } from '../data/blogPosts';
-import { getBlogPostById } from '../utils/blogPostUtils';
+/* import { blogPosts } from '../data/blogPosts';
+ */import { getBlogPostById } from '../utils/blogPostUtils';
 import './pages.css';
 
 const BlogPostDetail: React.FC = () => {
