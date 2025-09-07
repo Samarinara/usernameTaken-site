@@ -1,14 +1,14 @@
 import { Route, BrowserRouter, Routes, Navigate } from 'react-router-dom';
 import "./App.css";
 
-import HomePage from "./Home";
+/* import HomePage from "./Home";
 import TeamPage from './pages/Team';
 import TeamMemberDetail from './pages/TeamMemberDetail';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Blog from './pages/Blog';
 import BlogPostDetail from './pages/BlogPostDetail';
-import Certifications from './pages/Certifications';
+import Certifications from './pages/Certifications'; */
 import UnderConstruction from './pages/UnderConstruction';
 
 
