@@ -6,21 +6,12 @@ import './pages.css';
 
 const Blog: React.FC = () => {
   return (
-    <Layout>
-      <div className="blog-page">
-        <div className="blog-header">
-          <h1>Blog</h1>
-          <p>Insights, research, and experiences from the _usernameTaken team</p>
-        </div>
-        
-        <div className="blog-posts-grid">
-          {blogPosts.map((post) => (
-            <BlogPostCard key={post.id} post={post} variant="grid" />
-          ))}
-        </div>
+    <div className="page-container">
+      <h1 className="page-title">Blog</h1>
+      <div className="grid-container">
+        {blogPosts.map((post) => (
+          <BlogPostCard key={post.id} post={post} />
+        ))}
       </div>
-    </Layout>
-  );
-};
 
 export default Blog;

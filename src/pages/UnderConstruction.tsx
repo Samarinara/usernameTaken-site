@@ -6,10 +6,10 @@ import './pages.css';
 const UnderConstruction: React.FC = () => {
   return (
     <Layout>
-      <div className="under-construction-page">
-        <div className="under-construction-content">
-          <h1>Page Under Construction</h1>
-          <p>This page is currently being developed. Please check back later.</p>
+      <div className="page-container">
+        <div className="centered-container">
+          <h1 className="centered-title">Page Under Construction</h1>
+          <p className="centered-message">This page is currently being developed. Please check back later.</p>
           <Link to="/" className="back-button">
             Go to Homepage
           </Link>

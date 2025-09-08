@@ -53,9 +53,9 @@ const Certifications: React.FC = () => {
         {Object.entries(certificationsByType).map(([type, certs]) => (
           <section key={type} className="certification-section">
             <h2>{type === 'certification' ? 'Certifications' : 'Awards & Achievements'}</h2>
-            <div className="certifications-grid">
+            <div className="grid-container">
               {certs.map((cert) => (
-                <div key={cert.id} className="certification-card">
+                <div key={cert.id} className="card">
                   <div className="certification-header">
                     <h3>{cert.name}</h3>
                     <div className="certification-meta">

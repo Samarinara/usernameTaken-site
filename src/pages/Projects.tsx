@@ -86,7 +86,7 @@ const Projects: React.FC = () => {
       </section>
       
       {filteredProjects.length > 0 ? (
-        <section className="projects-grid">
+        <section className="grid-container">
           {filteredProjects.map((project) => (
             <div key={project.id} className="project-card-wrapper">
               <ProjectCard project={project} variant="grid" />
