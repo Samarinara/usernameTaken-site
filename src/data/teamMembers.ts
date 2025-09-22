@@ -6,19 +6,19 @@ import type { TeamMember } from '../models/TeamMember';
  */
 export const teamMembers: TeamMember[] = [
   {
-    id: 'alice-smith',
-    name: 'Alice Smith',
-    role: 'Cybersecurity Specialist',
-    bio: 'Alice specializes in penetration testing and vulnerability assessment with over 5 years of experience in the field. She has contributed to several open-source security tools and regularly participates in CTF competitions.',
-    skills: ['Penetration Testing', 'Vulnerability Assessment', 'Network Security', 'Python', 'Bash'],
+    id: 'sam-katevatis',
+    name: 'Sam Katevatis',
+    role: 'Full Stack Developer',
+    bio: 'Sam is a full stack developer speializing in beautiful UI and user friendly backends',
+    skills: ['Rust Development', 'JS/TS Development', 'Network Security', 'Python', 'Project Management', 'Docker'],
     socialLinks: {
-      github: 'https://github.com/alice-security',
-      linkedin: 'https://linkedin.com/in/alice-smith',
-      twitter: 'https://twitter.com/alice_security',
+      website: 'https://portfoliio-psi.vercel.app/home',
+      github: 'https://github.com/samarinara',
+      bluesky: 'https://samarinara.bsky.social',
     },
-    joinDate: new Date('2021-03-15'),
-    specializations: ['Web Application Security', 'Network Security', 'Security Training'],
-    quote: "The only truly secure system is one that's powered off and sealed in a lead-lined room with armed guards - and even then I have my doubts."
+    joinDate: new Date('2025-03-15'),
+    specializations: ['Web Application Development', 'Network Security', 'Backend Server Development'],
+    quote: "Why would you touch that? It was working."
   },
   {
     id: 'bob-johnson',

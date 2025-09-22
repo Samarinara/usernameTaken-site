@@ -11,6 +11,7 @@ export interface SocialLinks {
   linkedin?: string;
   twitter?: string;
   website?: string;
+  bluesky?: string;
 }
 
 /**
