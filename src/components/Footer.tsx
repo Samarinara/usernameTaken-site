@@ -16,8 +16,7 @@ const footerLinks: FooterLink[] = [
 ];
 
 const externalLinks: FooterLink[] = [
-  { label: 'GitHub', path: 'https://github.com', external: true },
-  { label: 'Contact', path: 'mailto:contact@usernametaken.dev', external: true }
+  { label: 'GitHub', path: 'https://github.com/teamusernametaken', external: true },
 ];
 
 function Footer() {
