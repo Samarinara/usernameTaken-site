@@ -17,12 +17,12 @@
 }
 
 .blog-post-card--grid {
-  min-height: 320px;
+  min-height: 30vh;
 }
 
 .blog-post-card--list {
   flex-direction: column;
-  min-height: 160px;
+  min-height: 15vh;
 }
 
 .blog-post-card--list .blog-post-card__content {

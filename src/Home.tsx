@@ -1,6 +1,7 @@
-import { useNavigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import './Home.css';
+import './pages/pages.css';
+import { useTransition } from './TransitionContext';
 
 /**
  * Homepage component for _usernameTaken website
@@ -8,7 +9,7 @@ import './Home.css';
  * Creates navigation cards for main sections following neobrutalist design principles
  */
 function HomePage() {
-  const navigate = useNavigate();
+  const { startTransition } = useTransition();
 
   // Navigation card data
   const navigationCards = [
@@ -63,7 +64,7 @@ function HomePage() {
               <button 
                 key={card.path}
                 className="nav-card" 
-                onClick={() => navigate(card.path)}
+                onClick={() => startTransition(card.path)}
                 aria-label={card.ariaLabel}
               >
                 <h3>{card.title}</h3>

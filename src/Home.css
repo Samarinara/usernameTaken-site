@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Homepage - Neobrutalist Design
+   Homepage - Art Deco Design
    ========================================================================== */
 
 .homepage {
@@ -15,60 +15,49 @@
 .hero-section {
   padding: var(--space-16) var(--space-4) var(--space-12);
   text-align: center;
-  border-bottom: var(--border-medium);
+  border-bottom: var(--border-thin);
   position: relative;
 }
 
-.hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: var(--color-secondary);
-}
-
 .hero-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: var(--space-8);
-  border: var(--border-medium);
+  border: var(--border-thick);
   background-color: var(--color-secondary);
 }
 
 .team-name {
   font-size: var(--text-5xl);
   font-weight: var(--font-bold);
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-serif);
   margin-bottom: var(--space-6);
   letter-spacing: -0.02em;
-  text-transform: uppercase;
+  text-transform: uppercase; /* Keeping uppercase here for heroic impact */
+  letter-spacing: 0.05em;
 }
 
 .cursor {
   color: var(--color-primary);
-  font-weight: var(--font-bold);
+  font-weight: normal;
+  opacity: 0.7;
 }
 
 .team-description {
   font-size: var(--text-2xl);
   font-weight: var(--font-semibold);
   margin-bottom: var(--space-4);
-  color: var(--color-primary);
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-serif);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .team-subtitle {
   font-size: var(--text-lg);
-  font-weight: var(--font-normal);
-  color: var(--color-primary);
+  font-weight: var(--font-medium);
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
-  font-family: var(--font-family-mono);
 }
 
 /* ==========================================================================
@@ -90,38 +79,39 @@
 
 .nav-card {
   background-color: var(--color-secondary);
-  border: var(--border-medium);
+  border: var(--border-thin);
   padding: var(--space-8);
   text-align: left;
   cursor: pointer;
-  transition: none;
-  /* No smooth transitions for e-ink aesthetic */
-  min-height: 160px;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .nav-card:hover {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
-  box-shadow: none;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gray-400);
 }
 
 .nav-card:focus {
   outline: var(--border-thick);
   outline-offset: 2px;
+  border-color: var(--color-primary);
 }
 
 .nav-card h3 {
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
   margin-bottom: var(--space-3);
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-serif);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  color: var(--color-primary);
 }
 
 .nav-card p {
@@ -129,11 +119,11 @@
   font-weight: var(--font-normal);
   line-height: 1.5;
   margin: 0;
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-serif);
 }
 
 .nav-card:hover p {
-  opacity: 1;
+  color: var(--color-primary);
 }
 
 .nav-card::before {
@@ -142,14 +132,14 @@
   top: 8px;
   right: 8px;
   width: 12px;
-  height: 12px;
-  border: var(--border-thin);
-  background-color: var(--color-secondary);
+  height: 1px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform 0.2s ease-out;
 }
 
 .nav-card:hover::before {
-  background-color: var(--color-primary);
-  border-color: var(--color-secondary);
+  transform: scaleX(1);
 }
 
 /* ==========================================================================
@@ -188,7 +178,7 @@
 
   .nav-card {
     padding: var(--space-6);
-    min-height: 120px;
+    min-height: 12vh;
   }
 
   .nav-card h3 {
@@ -215,6 +205,6 @@
 
   .nav-card {
     padding: var(--space-5);
-    min-height: 100px;
+    min-height: 10vh;
   }
 }

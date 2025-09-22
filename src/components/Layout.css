@@ -48,7 +48,7 @@
 .layout-main--centered {
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 200px); /* Account for header/footer */
+  min-height: 80vh; /* Account for header/footer */
 }
 
 .layout-main--centered .layout-container {
@@ -88,15 +88,15 @@
 }
 
 .layout-grid--2-col {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(23vw, 1fr));
 }
 
 .layout-grid--3-col {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(19vw, 1fr));
 }
 
 .layout-grid--4-col {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr));
 }
 
 /* ==========================================================================

@@ -1,90 +1,119 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
-import TeamMemberCard from '../components/TeamMemberCard';
-import { getAllTeamMembers } from '../utils/teamMemberUtils';
-import './pages.css';
+import { teamMembers } from '../data/teamMembers';
+import { getInitials } from '../utils/teamMemberUtils';
+import type { TeamMember } from '../models/TeamMember';
+import './TeamPage.css';
 
-/**
- * Team page component
- * Displays all team members in a grid layout
- * Implements requirements 2.1, 7.1, 7.2
- */
-function TeamPage() {
-  const teamMembers = getAllTeamMembers();
-  const [filter, setFilter] = useState('');
-  
-  // Filter team members based on search input
-  const filteredMembers = filter 
-    ? teamMembers.filter(member => 
-        member.name.toLowerCase().includes(filter.toLowerCase()) ||
-        member.role.toLowerCase().includes(filter.toLowerCase()) ||
-        member.skills.some(skill => skill.toLowerCase().includes(filter.toLowerCase()))
-      )
-    : teamMembers;
+const TeamPage: React.FC = () => {
+  const [focusedMember, setFocusedMember] = useState<TeamMember | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // Set the first member as focused on initial load
+    if (teamMembers.length > 0) {
+      setFocusedMember(teamMembers[currentIndex]);
+    }
+  }, [currentIndex]);
+
+  const handlePrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? teamMembers.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === teamMembers.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handleGridSelect = (index: number) => {
+    setCurrentIndex(index);
+  };
 
   return (
     <Layout className="team-page-layout">
       <div className="team-page">
-        {/* Page Header */}
-        <section className="team-header">
-          <div className="team-header-content">
-            <h1 className="team-title">Our Team</h1>
-            <p className="team-subtitle">
-              Meet the _usernameTaken members and their expertise in computer science and cybersecurity
-            </p>
+        <header className="team-page-header">
+          <h1>Meet the Team</h1>
+          <p>The architects of our digital frontier. A collective of experts in computer science and cybersecurity.</p>
+        </header>
+
+        <section className="team-grid">
+          <div className="team-grid-container">
+            {teamMembers.map((member, index) => (
+              <button
+                key={member.id}
+                className={`team-grid-item ${currentIndex === index ? 'active' : ''}`}
+                onClick={() => handleGridSelect(index)}
+                aria-label={`Select ${member.name}`}
+              >
+                <div className="grid-item-avatar-container">
+                  {member.avatar ? (
+                    <img src={member.avatar} alt={member.name} className="grid-item-avatar" />
+                  ) : (
+                    <div className="grid-item-initials-avatar">
+                      <span>{getInitials(member)}</span>
+                    </div>
+                  )}
+                </div>
+                <span className="grid-item-name">{member.name}</span>
+              </button>
+            ))}
           </div>
         </section>
-        
-        {/* Search and Filter */}
-        <section className="team-filter">
-          <div className="filter-container">
-            <input
-              type="text"
-              placeholder="Search by name, role, or skill..."
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-              className="team-search"
-              aria-label="Search team members"
-            />
-            {filter && (
-              <button 
-                className="clear-filter" 
-                onClick={() => setFilter('')}
-                aria-label="Clear search"
-              >
-                ✕
-              </button>
+
+        <div className="team-showcase-container">
+          <main className="focused-member-container">
+            <button onClick={handlePrevious} className="nav-button prev-button" aria-label="Previous member">
+              &#x2190;
+            </button>
+            {focusedMember && (
+              <div key={focusedMember.id} className="focused-member">
+                <div className="focused-member-card">
+                  <div className="member-avatar-container">
+                    {focusedMember.avatar ? (
+                      <img
+                        src={focusedMember.avatar}
+                        alt={focusedMember.name}
+                        className="member-avatar"
+                      />
+                    ) : (
+                      <div className="member-initials-avatar">
+                        <span>{getInitials(focusedMember)}</span>
+                      </div>
+                    )}
+                  </div>
+                  <div className="member-details">
+                    <h2 className="member-name">{focusedMember.name}</h2>
+                    <p className="member-role">{focusedMember.role}</p>
+                    {focusedMember.quote && (
+                      <blockquote className="member-quote">
+                        "{focusedMember.quote}"
+                      </blockquote>
+                    )}
+                    <Link to={`/team/${focusedMember.id}`} className="profile-link">
+                      View Full Profile
+                    </Link>
+                  </div>
+                </div>
+              </div>
             )}
-          </div>
-        </section>
-        
-        {/* Team Members Grid */}
-        <section className="team-grid-section">
-          {filteredMembers.length > 0 ? (
-            <div className="team-grid">
-              {filteredMembers.map((member) => (
-                <TeamMemberCard 
-                  key={member.id} 
-                  member={member} 
-                  variant="grid" 
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="no-results">
-              <p>No team members found matching "{filter}"</p>
-              <button 
-                className="reset-search" 
-                onClick={() => setFilter('')}
-              >
-                Reset Search
-              </button>
-            </div>
-          )}
-        </section>
+            {!focusedMember && (
+              <div className="focused-member-placeholder">
+                <p>Select a team member to see their details.</p>
+              </div>
+            )}
+            <button onClick={handleNext} className="nav-button next-button" aria-label="Next member">
+              &#x2192;
+            </button>
+          </main>
+        </div>
       </div>
     </Layout>
   );
-}
+};
 
 export default TeamPage;

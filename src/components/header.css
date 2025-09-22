@@ -7,7 +7,7 @@
   top: 0;
   z-index: 100;
   background-color: var(--color-secondary);
-  border-bottom: var(--border-medium);
+  border-bottom: var(--border-thin);
   padding: var(--space-4) 0;
 }
 
@@ -42,8 +42,9 @@
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
   margin: 0;
-  font-family: var(--font-family-mono);
-  letter-spacing: -0.02em;
+  font-family: var(--font-family-serif);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /* ==========================================================================
@@ -71,24 +72,27 @@
 .nav-link {
   display: block;
   padding: var(--space-3) var(--space-4);
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-serif);
   font-size: var(--text-base);
   font-weight: var(--font-medium);
   color: var(--color-primary);
   text-decoration: none;
-  border: var(--border-thin);
+  border: 1px solid transparent;
   background-color: var(--color-secondary);
-  transition: none;
-  min-height: 44px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  min-height: var(--touch-target-min);
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .nav-link:hover {
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-gray-100);
   text-decoration: none;
+  border-bottom-color: var(--color-primary);
 }
 
 .nav-link:focus {
@@ -99,6 +103,7 @@
 .nav-link--active {
   color: var(--color-secondary);
   background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 /* ==========================================================================
@@ -110,11 +115,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
   padding: var(--space-2);
   background-color: var(--color-secondary);
-  border: var(--border-medium);
+  border: var(--border-thin);
   cursor: pointer;
   gap: var(--space-1);
 }
@@ -132,7 +137,7 @@
   width: 20px;
   height: 2px;
   background-color: var(--color-primary);
-  transition: none;
+  transition: background-color 0.2s ease;
 }
 
 /* ==========================================================================
@@ -165,7 +170,7 @@
     left: 0;
     right: 0;
     background-color: var(--color-secondary);
-    border-bottom: var(--border-medium);
+    border-bottom: var(--border-thin);
     padding: var(--space-4);
   }
 
@@ -177,7 +182,7 @@
   .header-nav--mobile .nav-link {
     width: 100%;
     text-align: center;
-    min-height: 48px;
+    min-height: var(--touch-target-comfortable);
   }
 }
 

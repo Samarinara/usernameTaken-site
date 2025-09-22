@@ -26,6 +26,7 @@ export interface TeamMember {
   socialLinks?: SocialLinks;
   joinDate: Date;
   specializations: string[];
+  quote: string;
 }
 
 /**

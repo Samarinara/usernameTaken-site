@@ -11,14 +11,14 @@ export const teamMembers: TeamMember[] = [
     role: 'Cybersecurity Specialist',
     bio: 'Alice specializes in penetration testing and vulnerability assessment with over 5 years of experience in the field. She has contributed to several open-source security tools and regularly participates in CTF competitions.',
     skills: ['Penetration Testing', 'Vulnerability Assessment', 'Network Security', 'Python', 'Bash'],
-    avatar: '/assets/team/alice.webp',
     socialLinks: {
       github: 'https://github.com/alice-security',
       linkedin: 'https://linkedin.com/in/alice-smith',
       twitter: 'https://twitter.com/alice_security',
     },
     joinDate: new Date('2021-03-15'),
-    specializations: ['Web Application Security', 'Network Security', 'Security Training']
+    specializations: ['Web Application Security', 'Network Security', 'Security Training'],
+    quote: "The only truly secure system is one that's powered off and sealed in a lead-lined room with armed guards - and even then I have my doubts."
   },
   {
     id: 'bob-johnson',
@@ -26,13 +26,13 @@ export const teamMembers: TeamMember[] = [
     role: 'Full-Stack Developer',
     bio: 'Bob is a full-stack developer with expertise in React, Node.js, and TypeScript. He focuses on building secure and scalable web applications with a strong emphasis on code quality and testing.',
     skills: ['React', 'TypeScript', 'Node.js', 'GraphQL', 'Jest'],
-    avatar: '/assets/team/bob.webp',
     socialLinks: {
       github: 'https://github.com/bob-dev',
       website: 'https://bob-johnson.dev',
     },
     joinDate: new Date('2020-11-02'),
-    specializations: ['Frontend Architecture', 'API Design', 'Performance Optimization']
+    specializations: ['Frontend Architecture', 'API Design', 'Performance Optimization'],
+    quote: "Good code is its own best documentation. All my code is perfect, so I don't need comments."
   },
   {
     id: 'carol-williams',
@@ -45,7 +45,8 @@ export const teamMembers: TeamMember[] = [
       linkedin: 'https://linkedin.com/in/carol-williams',
     },
     joinDate: new Date('2019-07-22'),
-    specializations: ['Cloud Architecture', 'Infrastructure as Code', 'Microservices']
+    specializations: ['Cloud Architecture', 'Infrastructure as Code', 'Microservices'],
+    quote: "There is no cloud, it's just someone else's computer. My job is to make sure that computer is on fire... in a controlled way."
   },
   {
     id: 'dave-brown',
@@ -53,14 +54,14 @@ export const teamMembers: TeamMember[] = [
     role: 'Security Researcher',
     bio: 'Dave focuses on discovering and analyzing new security vulnerabilities. His research has been published in several academic journals and he regularly presents at security conferences.',
     skills: ['Reverse Engineering', 'Malware Analysis', 'C/C++', 'Assembly', 'Fuzzing'],
-    avatar: '/assets/team/dave.webp',
     socialLinks: {
       github: 'https://github.com/dave-security',
       twitter: 'https://twitter.com/dave_research',
       website: 'https://dave-brown.net',
     },
     joinDate: new Date('2020-02-10'),
-    specializations: ['Binary Analysis', 'Exploit Development', 'Security Research']
+    specializations: ['Binary Analysis', 'Exploit Development', 'Security Research'],
+    quote: "In God we trust. All others must bring data. And even then, I'll probably run my own query."
   },
   {
     id: 'eve-miller',
@@ -73,6 +74,7 @@ export const teamMembers: TeamMember[] = [
       linkedin: 'https://linkedin.com/in/eve-miller',
     },
     joinDate: new Date('2021-09-05'),
-    specializations: ['Machine Learning for Security', 'Anomaly Detection', 'Threat Intelligence']
+    specializations: ['Machine Learning for Security', 'Anomaly Detection', 'Threat Intelligence'],
+    quote: "The goal is to turn data into information, and information into insight. And occasionally, into a really cool graph."
   }
 ];

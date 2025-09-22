@@ -1,11 +1,15 @@
 /* ==========================================================================
-   Neobrutalist Design System - E-ink Inspired
+   Art Deco Design System
    ========================================================================== */
 
 :root {
-  /* Primary Colors - Monochrome E-ink Inspired */
-  --color-primary: #000000;      /* Pure black */
-  --color-secondary: #ffffff;    /* Pure white */
+  /* Primary Colors - Art Deco Inspired */
+  --color-primary: #000000;      /* Black */
+  --color-secondary: #ffffff;    /* White */
+  
+  /* Accent Colors */
+  --color-accent: #e5e5e5;       /* Light Gray */
+  --color-accent-dark: #737373;  /* Dark Medium Gray */
   
   /* Grayscale */
   --color-gray-100: #f5f5f5;     /* Very light gray */
@@ -15,23 +19,21 @@
   --color-gray-500: #737373;     /* Dark medium gray */
   --color-gray-600: #525252;     /* Dark gray */
   --color-gray-700: #404040;     /* Very dark gray */
-  
-  /* Accent (minimal use) */
-  --color-accent: #1a1a1a;       /* Near black for subtle emphasis */
 
   /* Typography */
-  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  --font-family-serif: 'Times New Roman', Times, serif;
+  --font-family-mono: 'Courier New', Courier, monospace;
   
   /* Font Sizes */
-  --text-xs: 0.75rem;     /* 12px */
-  --text-sm: 0.875rem;    /* 14px */
-  --text-base: 1rem;      /* 16px */
-  --text-lg: 1.125rem;    /* 18px */
-  --text-xl: 1.25rem;     /* 20px */
-  --text-2xl: 1.5rem;     /* 24px */
-  --text-3xl: 1.875rem;   /* 30px */
-  --text-4xl: 2.25rem;    /* 36px */
-  --text-5xl: 3rem;       /* 48px */
+  --text-xs: clamp(0.75rem, 0.6rem + 0.25vw, 0.85rem);   /* ~12px -> 13.6px */
+  --text-sm: clamp(0.875rem, 0.7rem + 0.25vw, 1rem);     /* ~14px -> 16px */
+  --text-base: clamp(1rem, 0.8rem + 0.25vw, 1.1rem);      /* ~16px -> 17.6px */
+  --text-lg: clamp(1.125rem, 0.9rem + 0.3vw, 1.3rem);    /* ~18px -> 20.8px */
+  --text-xl: clamp(1.25rem, 1rem + 0.4vw, 1.5rem);      /* ~20px -> 24px */
+  --text-2xl: clamp(1.5rem, 1.2rem + 0.5vw, 1.8rem);      /* ~24px -> 28.8px */
+  --text-3xl: clamp(1.875rem, 1.5rem + 0.6vw, 2.2rem);   /* ~30px -> 35.2px */
+  --text-4xl: clamp(2.25rem, 1.8rem + 0.8vw, 2.7rem);    /* ~36px -> 43.2px */
+  --text-5xl: clamp(3rem, 2.5rem + 1vw, 3.6rem);        /* ~48px -> 57.6px */
 
   /* Font Weights */
   --font-normal: 400;
@@ -40,27 +42,27 @@
   --font-bold: 700;
 
   /* Spacing Scale */
-  --space-1: 0.25rem;     /* 4px */
-  --space-2: 0.5rem;      /* 8px */
-  --space-3: 0.75rem;     /* 12px */
-  --space-4: 1rem;        /* 16px */
-  --space-5: 1.25rem;     /* 20px */
-  --space-6: 1.5rem;      /* 24px */
-  --space-8: 2rem;        /* 32px */
-  --space-10: 2.5rem;     /* 40px */
-  --space-12: 3rem;       /* 48px */
-  --space-16: 4rem;       /* 64px */
-  --space-20: 5rem;       /* 80px */
+  --space-1: clamp(0.25rem, 0.3125vw, 0.4rem);      /* ~4px -> 6.4px */
+  --space-2: clamp(0.5rem, 0.625vw, 0.75rem);       /* ~8px -> 12px */
+  --space-3: clamp(0.75rem, 0.9375vw, 1rem);        /* ~12px -> 16px */
+  --space-4: clamp(1rem, 1.25vw, 1.5rem);         /* ~16px -> 24px */
+  --space-5: clamp(1.25rem, 1.5625vw, 1.8rem);      /* ~20px -> 28.8px */
+  --space-6: clamp(1.5rem, 1.875vw, 2.2rem);       /* ~24px -> 35.2px */
+  --space-8: clamp(2rem, 2.5vw, 3rem);           /* ~32px -> 48px */
+  --space-10: clamp(2.5rem, 3.125vw, 3.75rem);      /* ~40px -> 60px */
+  --space-12: clamp(3rem, 3.75vw, 4.5rem);        /* ~48px -> 72px */
+  --space-16: clamp(4rem, 5vw, 6rem);            /* ~64px -> 96px */
+  --space-20: clamp(5rem, 6.25vw, 7.5rem);        /* ~80px -> 120px */
 
   /* Borders */
-  --border-thin: 1px solid var(--color-primary);
-  --border-medium: 2px solid var(--color-primary);
-  --border-thick: 3px solid var(--color-primary);
+  --border-thin: 1px solid var(--color-gray-200);
+  --border-medium: 1px solid var(--color-gray-300);
+  --border-thick: 3px double var(--color-primary);
 
-  /* Shadows (minimal, for depth only) */
-  --shadow-sm: 2px 2px 0px var(--color-primary);
-  --shadow-md: 4px 4px 0px var(--color-primary);
-  --shadow-lg: 6px 6px 0px var(--color-primary);
+  /* Shadows (subtle for depth) */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.07), 0 3px 8px rgba(0, 0, 0, 0.06);
 
   /* Responsive Breakpoints - Mobile First */
   --breakpoint-sm: 640px;   /* Small devices (landscape phones) */
@@ -69,9 +71,9 @@
   --breakpoint-xl: 1280px;  /* Extra large devices (large desktops) */
   --breakpoint-2xl: 1536px; /* 2X large devices (very large screens) */
 
-  /* Touch-friendly sizing */
-  --touch-target-min: 44px;  /* Minimum touch target size */
-  --touch-target-comfortable: 48px; /* Comfortable touch target size */
+  /* Touch-friendly sizing using vmin for consistency */
+  --touch-target-min: clamp(44px, 4.5vmin, 48px);
+  --touch-target-comfortable: clamp(48px, 5vmin, 56px);
   --touch-spacing: 8px;      /* Minimum spacing between touch targets */
 
   /* Typography rendering */
@@ -93,8 +95,8 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  font-family: var(--font-family-mono);
+  min-height: 100%;
+  font-family: var(--font-family-serif);
   font-size: var(--text-base);
   font-weight: var(--font-normal);
   color: var(--color-primary);
@@ -116,11 +118,13 @@ html, body {
    ========================================================================== */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-serif);
   font-weight: var(--font-bold);
   line-height: 1.2;
   margin: 0 0 var(--space-4) 0;
   color: var(--color-primary);
+  /* text-transform: uppercase; */ /* Removing universal uppercase for better readability */
+  letter-spacing: 0.025em; /* Reducing letter spacing for a more refined look */
 }
 
 h1 {
@@ -157,26 +161,28 @@ p {
    ========================================================================== */
 
 button {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-serif);
   font-size: var(--text-base);
   font-weight: var(--font-medium);
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
-  border: var(--border-medium);
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-gray-300);
   padding: var(--space-4) var(--space-6);
   cursor: pointer;
-  transition: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
   min-height: var(--touch-target-comfortable); /* Touch-friendly by default */
   min-width: var(--touch-target-comfortable);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  text-transform: uppercase;
 }
 
 button:hover {
   color: var(--color-primary);
-  background-color: var(--color-secondary);
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-400);
 }
 
 button:focus,
@@ -186,7 +192,9 @@ button:focus-visible {
 }
 
 button:active {
-  transform: translate(1px, 1px);
+  transform: translateY(1px);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 /* Touch-friendly links */
@@ -201,7 +209,8 @@ a {
 }
 
 a:hover {
-  text-decoration-thickness: 2px;
+  color: var(--color-gray-600);
+  text-decoration-color: var(--color-gray-600);
 }
 
 a:focus {
@@ -299,4 +308,3 @@ a + button {
     font-size: var(--text-sm);
   }
 }
-

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   App-specific styles using the neobrutalist design system - Mobile First
+   App-specific styles using the Art Deco design system - Mobile First
    ========================================================================== */
 
 .app {
@@ -18,14 +18,15 @@
 
 /* Card component - mobile first */
 .card {
-  border: var(--border-medium);
+  border: var(--border-thin);
   padding: var(--space-4);
   background-color: var(--color-secondary);
   margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-sm);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Responsive container sizing */
