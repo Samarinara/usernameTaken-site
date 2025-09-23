@@ -140,6 +140,11 @@
   transition: background-color 0.2s ease;
 }
 
+/* Mobile navigation - hidden by default, can be toggled with JavaScript */
+.header-nav--mobile {
+  display: none; /* Hidden by default on desktop */
+}
+
 /* ==========================================================================
    Responsive Design
    ========================================================================== */
@@ -162,16 +167,21 @@
     display: flex;
   }
 
-  /* Mobile navigation - hidden by default, can be toggled with JavaScript */
   .header-nav--mobile {
-    display: block;
+    display: flex;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background-color: var(--color-secondary);
     border-bottom: var(--border-thin);
-    padding: var(--space-4);
+    padding: 0 var(--space-4) var(--space-4);
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    z-index: -1; /* To prevent interaction when hidden */
   }
 
   .header-nav--mobile .nav-list {
@@ -183,6 +193,13 @@
     width: 100%;
     text-align: center;
     min-height: var(--touch-target-comfortable);
+  }
+
+  .header-nav--mobile.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    z-index: 99; /* Ensure it's on top when open */
   }
 }
 

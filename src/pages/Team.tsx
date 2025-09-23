@@ -38,7 +38,7 @@ const TeamPage: React.FC = () => {
       <div className="team-page">
         <header className="team-page-header">
           <h1>Meet the Team</h1>
-          <p>The architects of our digital frontier. A collective of experts in computer science and cybersecurity.</p>
+          <p>These are the people that make things happen</p>
         </header>
 
         <section className="team-grid">

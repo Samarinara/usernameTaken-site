@@ -63,24 +63,21 @@ function Header() {
           <span className="menu-icon"></span>
         </button>
 
-        {/* Mobile navigation menu */}
-        {isMobileMenuOpen && (
-          <nav className="header-nav--mobile">
-            <ul className="nav-list">
-              {navigationItems.map((item) => (
-                <li key={item.path} className="nav-item">
-                  <Link 
-                    to={item.path} 
-                    className={`nav-link ${location.pathname === item.path ? 'nav-link--active' : ''}`}
-                    onClick={closeMobileMenu}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
+        <nav className={`header-nav--mobile ${isMobileMenuOpen ? 'is-open' : ''}`}>
+          <ul className="nav-list">
+            {navigationItems.map((item) => (
+              <li key={item.path} className="nav-item">
+                <Link
+                  to={item.path}
+                  className={`nav-link ${location.pathname === item.path ? 'nav-link--active' : ''}`}
+                  onClick={closeMobileMenu}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );

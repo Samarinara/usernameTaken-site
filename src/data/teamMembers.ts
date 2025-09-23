@@ -35,8 +35,8 @@ export const teamMembers: TeamMember[] = [
     quote: "Good code is its own best documentation. All my code is perfect, so I don't need comments."
   },
   {
-    id: 'carol-williams',
-    name: 'Carol Williams',
+    id: 'carol-Smith',
+    name: 'Carol Smith',
     role: 'Systems Architect',
     bio: 'Carol designs and implements complex distributed systems with a focus on reliability and security. She has extensive experience with cloud infrastructure and containerization technologies.',
     skills: ['AWS', 'Kubernetes', 'Docker', 'Terraform', 'Go'],
