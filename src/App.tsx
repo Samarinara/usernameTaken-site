@@ -1,6 +1,7 @@
 import { Route, BrowserRouter, Routes, Navigate } from 'react-router-dom';
 import "./App.css";
 import HomePage from "./Home";
+import { SettingsProvider } from './SettingsContext';
 import { TransitionProvider } from './TransitionContext';
 import TeamPage from './pages/Team';
 /* 
@@ -17,26 +18,28 @@ import UnderConstruction from './pages/UnderConstruction';
 function App() {
   return(
     <div className="app">
-      <BrowserRouter>
-        <TransitionProvider>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/home" element={<Navigate to="/" replace />} />
-            <Route path="/team" element={<TeamPage />} />
-            //Under Construction Pages
-    {/*         
-            <Route path="/team/:memberId" element={<TeamMemberDetail />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:projectId" element={<ProjectDetail />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:postId" element={<BlogPostDetail />} />
-            <Route path="/certifications" element={<Certifications />} /> */}
-            <Route path="/under-construction" element={<UnderConstruction/>} />
-            
-            <Route path="*" element={<Navigate to="/under-construction" replace />} />
-          </Routes>
-        </TransitionProvider>
-      </BrowserRouter>
+      <SettingsProvider>
+        <BrowserRouter>
+          <TransitionProvider>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/home" element={<Navigate to="/" replace />} />
+              <Route path="/team" element={<TeamPage />} />
+              //Under Construction Pages
+      {/*         
+              <Route path="/team/:memberId" element={<TeamMemberDetail />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:projectId" element={<ProjectDetail />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:postId" element={<BlogPostDetail />} />
+              <Route path="/certifications" element={<Certifications />} /> */}
+              <Route path="/under-construction" element={<UnderConstruction/>} />
+              
+              <Route path="*" element={<Navigate to="/under-construction" replace />} />
+            </Routes>
+          </TransitionProvider>
+        </BrowserRouter>
+      </SettingsProvider>
     </div>
   );
 }

@@ -16,6 +16,12 @@
   box-shadow: none;
 }
 
+[data-theme='dark'] .team-member-card:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  box-shadow: none;
+}
+
 /* ==========================================================================
    Grid Variant - Mobile First
    ========================================================================== */

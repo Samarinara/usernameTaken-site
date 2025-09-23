@@ -1,0 +1,58 @@
+/* Refactored from a switch to a single animated button */
+.toggle-button {
+  background-color: var(--color-secondary);
+  border: var(--border-thin);
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* To contain the icons during animation */
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.toggle-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.toggle-button.toggled {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.icon {
+  position: absolute;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  width: clamp(18px, 4vmin, 22px);
+  height: clamp(18px, 4vmin, 22px);
+  color: var(--color-primary);
+}
+
+.toggle-button.toggled .icon {
+  color: var(--color-secondary);
+}
+
+/* Initial state: IconOff is visible, IconOn is hidden */
+.icon-on {
+  opacity: 0;
+  transform: translateY(-100%) rotate(-90deg);
+}
+
+.icon-off {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
+.toggle-button.toggled .icon-on {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
+.toggle-button.toggled .icon-off {
+  opacity: 0;
+  transform: translateY(100%) rotate(90deg);
+}

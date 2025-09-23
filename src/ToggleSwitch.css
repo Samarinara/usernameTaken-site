@@ -1,0 +1,79 @@
+.toggle-switch {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  width: clamp(48px, 9vmin, 54px);
+  height: calc(clamp(28px, 5vmin, 32px) - 6px);
+  display: inline-flex;
+  align-items: center;
+}
+
+.toggle-switch:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 0;
+}
+
+.toggle-track {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background-color: var(--color-secondary);
+  border: var(--border-thin);
+  transition: background-color 0.2s ease-in-out;
+  position: relative;
+}
+
+.toggle-track.toggled {
+  background-color: var(--color-primary);
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(clamp(28px, 5vmin, 32px) - 6px);
+  height: calc(clamp(28px, 5vmin, 32px) - 6px);
+  border-radius: 0;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border: var(--border-thin);
+}
+
+.toggle-track.toggled .toggle-thumb {
+  transform: translateX(calc(clamp(48px, 9vmin, 54px) - (clamp(28px, 5vmin, 32px) - 6px) - 2px));
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.toggle-thumb svg {
+  width: clamp(14px, 3vmin, 16px);
+  height: clamp(14px, 3vmin, 16px);
+}
+
+[data-theme='dark'] .toggle-track {
+  background-color: var(--color-secondary);
+  border-color: var(--color-primary);
+}
+
+[data-theme='dark'] .toggle-track.toggled {
+  background-color: var(--color-primary);
+}
+
+[data-theme='dark'] .toggle-thumb {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+[data-theme='dark'] .toggle-track.toggled .toggle-thumb {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}

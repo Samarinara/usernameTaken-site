@@ -23,6 +23,7 @@
   /* Typography */
   --font-family-serif: 'Times New Roman', Times, serif;
   --font-family-mono: 'Courier New', Courier, monospace;
+  --font-family-dyslexic: 'OpenDyslexic', 'Arial', sans-serif; /* Ensure OpenDyslexic is imported or installed */
   
   /* Font Sizes */
   --text-xs: clamp(0.75rem, 0.6rem + 0.25vw, 0.85rem);   /* ~12px -> 13.6px */
@@ -83,6 +84,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Dark theme variables */
+[data-theme='dark'] {
+  --color-primary: #ffffff;
+  --color-secondary: #121212; /* Slightly off-black for less harsh contrast */
+  
+  --color-accent: #2a2a2a;
+  --color-accent-dark: #4a4a4a;
+  
+  --color-gray-100: #404040;
+  --color-gray-200: #525252;
+  --color-gray-300: #737373;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #d4d4d4;
+  --color-gray-600: #e5e5e5;
+  --color-gray-700: #f5f5f5;
+
+  --border-thin: 1px solid var(--color-gray-700);
+  --border-medium: 1px solid var(--color-gray-600);
+  --border-thick: 3px double var(--color-primary);
+
+  --shadow-sm: 0 1px 2px rgba(255, 255, 255, 0.04);
+  --shadow-md: 0 2px 6px rgba(255, 255, 255, 0.06);
+  --shadow-lg: 0 10px 20px rgba(255, 255, 255, 0.07), 0 3px 8px rgba(255, 255, 255, 0.06);
+}
+
 /* ==========================================================================
    Reset and Base Styles
    ========================================================================== */
@@ -103,6 +129,11 @@ html, body {
   background-color: var(--color-secondary);
   line-height: 1.5;
   overflow-y: auto;
+}
+
+body[data-font='dyslexic'] {
+  --font-family-serif: var(--font-family-dyslexic);
+  --font-family-mono: 'OpenDyslexic Mono', 'Courier New', monospace;
 }
 
 #root {

@@ -1,0 +1,27 @@
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-6);
+  border-bottom: var(--border-thin);
+}
+
+.logo {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  text-decoration: none;
+}
+
+.settings-toggles {
+  display: flex;
+  gap: var(--space-4);
+  height: 5vh;
+}
+
+/* Hide header toggles on mobile, they are replaced by floating ones */
+@media (max-width: 767px) {
+  .settings-toggles {
+    display: none;
+  }
+}

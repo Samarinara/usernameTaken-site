@@ -5,7 +5,7 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   background-color: var(--color-secondary);
   border-bottom: var(--border-thin);
   padding: var(--space-4) 0;
@@ -104,6 +104,16 @@
   color: var(--color-secondary);
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Settings Toggles
+   ========================================================================== */
+
+.header-settings {
+  display: flex;
+  gap: var(--space-4);
+  height: 50%;
 }
 
 /* ==========================================================================

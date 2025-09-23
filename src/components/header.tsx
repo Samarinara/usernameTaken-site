@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './header.css';
+import SettingsToggles from '../SettingsToggles';
 
 interface NavigationItem {
   label: string;
@@ -50,6 +51,10 @@ function Header() {
             ))}
           </ul>
         </nav>
+
+        <div className="header-settings">
+          <SettingsToggles />
+        </div>
 
         {/* Mobile menu button */}
         <button 
