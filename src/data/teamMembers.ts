@@ -21,60 +21,42 @@ export const teamMembers: TeamMember[] = [
     quote: "Why would you touch that? It was working."
   },
   {
-    id: 'bob-johnson',
-    name: 'Bob Johnson',
-    role: 'Full-Stack Developer',
-    bio: 'Bob is a full-stack developer with expertise in React, Node.js, and TypeScript. He focuses on building secure and scalable web applications with a strong emphasis on code quality and testing.',
-    skills: ['React', 'TypeScript', 'Node.js', 'GraphQL', 'Jest'],
+    id: 'aaron-ashclarke',
+    name: 'Aaron Ashclarke',
+    role: 'Programmer/Cyber Security Specialist',
+    bio: 'Aaron is an experience programmer with skills in Java and Python.',
+    skills: ['Java', 'Python', 'Git'],
     socialLinks: {
-      github: 'https://github.com/bob-dev',
-      website: 'https://bob-johnson.dev',
+      github: 'https://github.com/aaron-ashclarke',
     },
-    joinDate: new Date('2020-11-02'),
-    specializations: ['Frontend Architecture', 'API Design', 'Performance Optimization'],
-    quote: "Good code is its own best documentation. All my code is perfect, so I don't need comments."
+    joinDate: new Date('2025-4-11'),
+    specializations: ['Blue Team', 'Programming', 'Problem Solving'],
+    quote: "We don't do things because they are easy... We do them because they are hard."
   },
   {
-    id: 'carol-Smith',
-    name: 'Carol Smith',
-    role: 'Systems Architect',
-    bio: 'Carol designs and implements complex distributed systems with a focus on reliability and security. She has extensive experience with cloud infrastructure and containerization technologies.',
-    skills: ['AWS', 'Kubernetes', 'Docker', 'Terraform', 'Go'],
+    id: 'olivia-zhao',
+    name: 'Olivia Zhao',
+    role: 'Student',
+    bio: 'I hope I make it out of here',
+    skills: ['sleeping'],
     socialLinks: {
-      github: 'https://github.com/carol-sys',
-      linkedin: 'https://linkedin.com/in/carol-williams',
+      github: 'https://github.com/oz-7',
     },
-    joinDate: new Date('2019-07-22'),
-    specializations: ['Cloud Architecture', 'Infrastructure as Code', 'Microservices'],
-    quote: "There is no cloud, it's just someone else's computer. My job is to make sure that computer is on fire... in a controlled way."
+    joinDate: new Date('2025-9-01'),
+    specializations: ['n/a'],
+    quote: "blub blub blub"
   },
   {
-    id: 'dave-brown',
-    name: 'Dave Brown',
-    role: 'Security Researcher',
-    bio: 'Dave focuses on discovering and analyzing new security vulnerabilities. His research has been published in several academic journals and he regularly presents at security conferences.',
-    skills: ['Reverse Engineering', 'Malware Analysis', 'C/C++', 'Assembly', 'Fuzzing'],
+    id: 'steven-su',
+    name: 'Steven Su',
+    role: 'Engineer-In-Training',
+    bio: 'Hi! Some of my interests include: Music, Swimming, Cybersec, CAD, and MIDI controllers, also student council manga',
+    skills: ['n/a'],
     socialLinks: {
-      github: 'https://github.com/dave-security',
-      twitter: 'https://twitter.com/dave_research',
-      website: 'https://dave-brown.net',
+      github: 'https://github.com/Pandass117',
     },
-    joinDate: new Date('2020-02-10'),
-    specializations: ['Binary Analysis', 'Exploit Development', 'Security Research'],
-    quote: "In God we trust. All others must bring data. And even then, I'll probably run my own query."
+    joinDate: new Date('2025-04-11'),
+    specializations: ['CAD', 'Windows Server', 'Electrical'],
+    quote: "Creamy"
   },
-  {
-    id: 'eve-miller',
-    name: 'Eve Miller',
-    role: 'Data Scientist',
-    bio: 'Eve specializes in applying machine learning techniques to security problems. She works on anomaly detection systems and automated threat intelligence analysis.',
-    skills: ['Python', 'TensorFlow', 'PyTorch', 'Data Analysis', 'Statistics'],
-    socialLinks: {
-      github: 'https://github.com/eve-data',
-      linkedin: 'https://linkedin.com/in/eve-miller',
-    },
-    joinDate: new Date('2021-09-05'),
-    specializations: ['Machine Learning for Security', 'Anomaly Detection', 'Threat Intelligence'],
-    quote: "The goal is to turn data into information, and information into insight. And occasionally, into a really cool graph."
-  }
 ];

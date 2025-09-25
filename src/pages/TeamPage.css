@@ -143,7 +143,7 @@
 
 .member-details {
   max-width: 450px;
-  overflow-y: auto; /* Allow details to scroll if they overflow */
+  overflow-y: show; /* Allow details to scroll if they overflow */
   padding: 0 var(--space-2);
   margin-top: auto; /* Push details down to fill space */
 }
