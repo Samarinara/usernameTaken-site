@@ -195,6 +195,60 @@
   transform: translateY(-2px);
 }
 
+.member-socials {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.social-icon-link {
+  position: relative; /* Required for tooltip positioning */
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+/* Tooltip pseudo-element */
+.social-icon-link::after {
+  content: attr(aria-label); /* Use the aria-label for the tooltip text */
+  position: absolute;
+  bottom: calc(100% + 10px); /* Position above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: 4px;
+  font-size: var(--text-sm);
+  font-family: var(--font-family-mono);
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.social-icon-link:hover {
+  color: var(--color-accent-primary);
+  transform: scale(1.15) translateY(-2px);
+}
+
+/* Show tooltip on hover */
+.social-icon-link:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-4px); /* Add a subtle upward animation */
+}
+
+.social-icon-link svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+
 .nav-button {
   background: none;
   border: var(--border-medium);
