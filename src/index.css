@@ -6,11 +6,12 @@
 :root {
   /* Primary Colors - Art Deco Inspired */
   --color-primary: #000000;      /* Black */
-  --color-secondary: #ffffff;    /* White */
+  --color-secondary: #fffef9;    /* White */
   
   /* Accent Colors */
   --color-accent: #e5e5e5;       /* Light Gray */
-  --color-accent-dark: #737373;  /* Dark Medium Gray */
+  --color-accent-primary: #B7410E; /* Rust/Orange Accent */
+  --color-accent-dark: #B7410E;  /* Dark Medium Gray */
   
   /* Grayscale */
   --color-gray-100: #f5f5f5;     /* Very light gray */
@@ -87,10 +88,11 @@
 
 /* Dark theme variables */
 [data-theme='dark'] {
-  --color-primary: #ffffff;
-  --color-secondary: #121212; /* Slightly off-black for less harsh contrast */
+  --color-primary: #fefcf1;
+  --color-secondary: #000000; /* Slightly off-black for less harsh contrast */
   
   --color-accent: #2a2a2a;
+  --color-accent-primary: #B7410E; /* Rust/Orange Accent */
   --color-accent-dark: #4a4a4a;
   
   --color-gray-100: #404040;

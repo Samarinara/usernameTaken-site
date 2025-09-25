@@ -15,6 +15,7 @@ function ToggleButton({ isToggled, onToggle, label, IconOn, IconOff }: ToggleBut
       onClick={onToggle}
       aria-label={label}
       aria-pressed={isToggled}
+      title={label}
     >
       <IconOn className="icon icon-on" />
       <IconOff className="icon icon-off" />

@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Team Page - Art Deco Design
+   - Enhanced with more animations and accent color usage.
+   ========================================================================== */
+
+.team-page {
+  padding: var(--space-12) var(--space-4);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.team-header h1 {
+  font-size: var(--text-5xl);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--space-6);
+  padding: var(--space-2) var(--space-8);
+}
+
+.team-header h1::before,
+.team-header h1::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 80px; /* Make lines longer */
+  height: 3px; /* Make lines thicker */
+  background-color: var(--color-accent-primary);
+  opacity: 1; /* Make lines fully opaque */
+  box-shadow: 0 0 4px var(--color-accent-primary); /* Add a subtle glow */
+  transform: translateY(-50%);
+}
+
+.team-header h1::before {
+  left: 0;
+}
+
+.team-header h1::after {
+  right: 0;
+}
+
+.team-header p {
+  font-size: var(--text-lg);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  position: relative;
+  padding-top: var(--space-6);
+  border-top: 3px double var(--color-accent-primary); /* Art Deco style double line */
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-10);
+}
+
+.team-member-card {
+  background-color: var(--color-secondary);
+  border: var(--border-thin);
+  padding: var(--space-6);
+  position: relative;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  text-align: left; /* Align content left for a more structured look */
+}
+
+.team-member-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--color-accent-primary);
+  box-shadow: var(--shadow-lg), 0 0 15px -5px var(--color-accent-primary);
+}
+
+.team-member-card::before,
+.team-member-card::after {
+  content: '';
+  position: absolute; /* Decorative frame for the avatar */
+  border-color: var(--color-accent-primary);
+  border-style: solid;
+  transition: all 0.4s ease-out;
+}
+
+.team-member-card::before {
+  top: calc(var(--space-6) - 10px); left: -10px;
+  width: 50px; height: 50px;
+  border-width: 3px 0 0 3px;
+}
+
+.team-member-card::after {
+  top: calc(var(--space-6) + 120px - 40px); left: calc(120px - 40px);
+  width: 50px; height: 50px;
+  border-width: 0 3px 3px 0;
+}
+
+.team-member-card:hover::before,
+.team-member-card:hover::after {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.member-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 0; /* Square avatar for Art Deco style */
+  margin-bottom: var(--space-6); /* Removed auto margin for left alignment */
+  background-color: var(--color-gray-200);
+  border: 3px solid var(--color-accent-primary); /* Use accent color by default */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--color-accent-dark);
+  transition: all 0.3s ease-out;
+}
+.team-member-card:hover .member-avatar {
+  border-color: var(--color-primary); /* Swap to primary on hover for contrast */
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 0 10px var(--color-accent-primary);
+}
+
+/* Style for the selected team member, ported from TeamPage.css */
+.team-member-card.active .member-avatar {
+  border-color: var(--color-accent-primary);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--color-accent-primary);
+}
+
+.member-name {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-4);
+  position: relative;
+  padding-bottom: var(--space-2);
+}
+
+/* This is a new pseudo-element for the underline, leaving ::after for the side line */
+.team-header h1 + p::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-accent-primary), transparent);
+  transform: translateX(-50%);
+}
+
+.member-name::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; /* Align with left-aligned text */
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent-primary);
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.member-role {
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-accent-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.3s ease-out;
+}
+
+/* Style for the member's quote, inspired by TeamPage.css */
+.member-quote {
+  font-size: var(--text-base);
+  color: var(--color-gray-700);
+  font-style: italic;
+  border-left: 3px solid var(--color-accent-primary); /* Use accent color */
+  padding-left: var(--space-4);
+  margin-top: var(--space-6);
+  text-align: left;
+  font-family: var(--font-family-serif);
+}
+
+.team-member-card:hover .member-name::after {
+  width: 70%;
+}
+
+.team-member-card:hover .member-role {
+  color: var(--color-accent-primary);
+}

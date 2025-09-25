@@ -10,14 +10,14 @@ const SettingsToggles = () => {
       <ToggleButton
         isToggled={theme === 'dark'}
         onToggle={toggleTheme} 
-        label="Toggle dark mode"
+        label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
         IconOn={Moon}
         IconOff={Sun}
       />
       <ToggleButton
         isToggled={font === 'dyslexic'}
         onToggle={toggleFont}
-        label="Toggle dyslexia-friendly font"
+        label={font === 'dyslexic' ? 'Switch to default font' : 'Switch to dyslexia-friendly font'}
         IconOn={Pilcrow}
         IconOff={Type}
       />
