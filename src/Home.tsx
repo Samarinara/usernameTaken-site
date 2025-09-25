@@ -1,6 +1,7 @@
 import Layout from './components/Layout';
 import './Home.css';
 import './pages/pages.css';
+import './animations.css';
 import { useTransition } from './TransitionContext';
 
 /**
@@ -46,7 +47,7 @@ function HomePage() {
         <section className="hero-section">
           <div className="hero-content">
             <h1 className="team-name">
-              <span className="cursor">_</span>usernameTaken
+              <span className="blinking-cursor">_</span>usernameTaken
             </h1>
             <p className="team-description">
               Computer Science & Cybersecurity Team

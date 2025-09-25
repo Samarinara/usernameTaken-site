@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import SettingsToggles from './SettingsToggles';
 import './Header.css';
+import './animations.css';
 
 function Header() {
   return (
     <header className="site-header">
       <Link to="/" className="logo">
-        _usernameTaken
+        <span className="blinking-cursor">_</span>usernameTaken
       </Link>
       <div className="settings-toggles">
         <SettingsToggles />

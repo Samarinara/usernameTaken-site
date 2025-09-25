@@ -12,6 +12,24 @@
   }
 }
 
+/* Blinking cursor animation */
+.blinking-cursor {
+  font-weight: normal;
+  animation: blink 1.5s linear infinite;
+  color: var(--color-accent-primary);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
 /* Staggered fade-in for homepage elements */
 @keyframes fadeInUp {
   from {

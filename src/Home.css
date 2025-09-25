@@ -66,12 +66,6 @@
   letter-spacing: 0.05em;
 }
 
-.cursor {
-  color: var(--color-primary);
-  font-weight: normal;
-  opacity: 0.7;
-}
-
 .team-description {
   font-size: var(--text-2xl);
   font-weight: var(--font-semibold);
