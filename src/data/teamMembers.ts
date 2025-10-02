@@ -59,7 +59,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "Ben Kerr",
     name: "Benjamin Kerr",
-    role: "Networking & Electronics Specialist",
+    role: "Networking & Electronics",
     bio: "Ben is self-taught in hacking and CAD and is now building laptops, SBCs and other cool projects. He is also an expert in CISCO networking.",
     skills: [
       "CAD",
@@ -73,7 +73,7 @@ export const teamMembers: TeamMember[] = [
     socialLinks: {
       github: "https://github.com/Benjamin-kerr",
       website: "https://Benswork.ca",
-      instagram: "https://www.instagram.com/benjamink1000?igsh=aTl6d3dmdmp1cnVs&utm_source=qr"
+      // instagram: "https://www.instagram.com/benjamink1000?igsh=aTl6d3dmdmp1cnVs&utm_source=qr"
     },
     joinDate: new Date("2024-09-15"),
     specializations: [
